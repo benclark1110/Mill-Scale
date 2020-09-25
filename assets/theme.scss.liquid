@@ -225,6 +225,12 @@ $postSmall: $small + $viewportIncrement;
 $preMedium: $medium - $viewportIncrement;
 $preLarge: $large - $viewportIncrement;
 
+/*================ Ben Theme Development Testing ================*/
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
 /*================ The following are dependencies of csswizardry grid ================*/
 $breakpoints: (
   'small' '(max-width: #{$small})',
@@ -1090,11 +1096,6 @@ html, body { background: $colorBody; }
   .header-bar__search:first-of-type .header-bar__search-input[type="search"]:focus {
     background-color: rgba(0,0,0,0.03);
   }
-}
-
-.announcement-bar--mobile {
-  padding-top: 5px;
-  padding-bottom: 5px;
 }
 
 /*================ Module | Grid Link ================*/

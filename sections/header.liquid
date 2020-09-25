@@ -47,38 +47,6 @@
     <div class="wrapper medium-down--hide">
       <div class="post-large--display-table">
 
-        {% if section.settings.show_announcement or section.settings.header_search_enable %}
-          <div class="header-bar__left post-large--display-table-cell">
-
-            {% comment %}
-              Add social links to header
-            {% endcomment %}
-
-            {% comment %}
-            <div class="header-bar__module header-bar__module--list">
-              {% include 'social-links' %}
-            </div>
-            {% endcomment %}
-
-            {% if section.settings.show_announcement %}
-              <div class="header-bar__module header-bar__message">
-                {% if section.settings.announcement_link != blank %}
-                  <a href="{{ section.settings.announcement_link }}">
-                {% endif %}
-                  {{ section.settings.header_text | escape }}
-                {% if section.settings.announcement_link != blank %}
-                  </a>
-                {% endif %}
-              </div>
-            {% elsif section.settings.header_search_enable %}
-              <div class="header-bar__module header-bar__search">
-                {% include 'search-bar' with 'header' %}
-              </div>
-            {% endif %}
-
-          </div>
-        {% endif %}
-
         <div class="header-bar__right post-large--display-table-cell">
 
           {% if shop.customer_accounts_enabled %}
@@ -116,28 +84,9 @@
             </a>
           </div>
 
-          {% if section.settings.header_search_enable %}
-            {% if section.settings.show_announcement %}
-              <div class="header-bar__module header-bar__search">
-                {% include 'search-bar' with 'header' %}
-              </div>
-            {% endif %}
-          {% endif %}
 
         </div>
       </div>
-    </div>
-
-    <div class="wrapper post-large--hide announcement-bar--mobile">
-      {% if section.settings.show_announcement %}
-        {% if section.settings.announcement_link != blank %}
-          <a href="{{ section.settings.announcement_link }}">
-        {% endif %}
-          <span>{{ section.settings.header_text | escape }}</span>
-        {% if section.settings.announcement_link != blank %}
-          </a>
-        {% endif %}
-      {% endif %}
     </div>
 
     <div class="wrapper post-large--hide">
