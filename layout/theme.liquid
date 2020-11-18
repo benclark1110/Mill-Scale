@@ -21,11 +21,12 @@
         <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
       {% endfor %}]
     {% else %}
-      <a href="{{ link.url }}">{{ link.title }}</a>
+      <a href="{{ link.url }}" style="text-decoration: none">{{ link.title }}</a>
     {% endif %}
   {% endfor %}
 
-  <a href="/cart">cart</a>
+  <a href="/cart" style="text-decoration: none">Cart</a>
+  <a href="https://www.instagram.com/mill.scale/?hl=en">insta</a>
 
   {% if shop.customer_accounts_enabled %}
     {% if customer %}
