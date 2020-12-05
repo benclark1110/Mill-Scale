@@ -1,0 +1,54 @@
+<h1>{{ page.title }}</h1>
+
+<p id="demo">Click me.</p>
+
+{% comment %} <h1>{{ collection.title }}</h1> 
+  {% for product in collection.products %}
+    <a href="{{ product.url | within: collection }}">
+      <img src="{{ product.featured_image.src | img_url: '300x' }}" alt="{{ product.featured_image.alt | escape }}">
+    </a>
+    <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
+      <p>{{ product.price | money }}</p>
+  {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
+  {% endfor %} {% endcomment %}
+
+{%  assign collectionTest = collections["Cookers"] %}
+
+{% for product in collectionTest.products %}
+    {{ product.title }}
+    <a href="{{ product.url | within: collection }}">
+        <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
+      </a>
+    {{ product.price | money }}
+{% endfor %}
+
+{% comment %} {% for collection in collections %}
+    {{ collection.products }}
+    {% for product in collection %}
+        {{ product.price }}
+        TEST
+    {% endfor %}
+{% endfor %} {% endcomment %}
+
+ {% comment %} {% for product in collection.all_products %}
+    <h1>{{ product.title }}</h1> 
+    <div>
+      <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
+      {{ product.price | money }}
+      {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
+      <a href="{{ product.url | within: collection }}">
+        <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
+      </a>
+    </div>
+  {% else %}
+    <p>no matches</p>
+{% endfor %} {% endcomment %}
+
+
+<script>
+document.getElementById("demo").onclick = function() {myFunction()};
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+}
+</script>

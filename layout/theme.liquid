@@ -1,5 +1,7 @@
 <!doctype html>
+
 <html>
+
 <head>
   <title>{{ page_title }}</title>
   <meta charset="utf-8">
@@ -11,22 +13,27 @@
   {{ 'application.scss.css' | asset_url | stylesheet_tag }}
   {{ 'application.js' | asset_url | script_tag }}
 </head>
+
+
 <body>
+  <header>
+    <div class="testing">
+      {% for link in linklists.main-menu.links %}
+        {% assign child_list_handle = link.title | handleize %}
+        {% if linklists[child_list_handle].links != blank %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+          [{% for childlink in linklists[child_list_handle].links %}
+            <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+          {% endfor %}]
+        {% else %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {% endif %}
+      {% endfor %}
 
-  {% for link in linklists.main-menu.links %}
-    {% assign child_list_handle = link.title | handleize %}
-    {% if linklists[child_list_handle].links != blank %}
-      <a href="{{ link.url }}">{{ link.title }}</a>
-      [{% for childlink in linklists[child_list_handle].links %}
-        <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
-      {% endfor %}]
-    {% else %}
-      <a href="{{ link.url }}">{{ link.title }}</a>
-    {% endif %}
-  {% endfor %}
-
-  <a href="/cart">Cart</a>
-  <a href="https://www.instagram.com/mill.scale/?hl=en">insta</a>
+      <a href="/cart">Cart</a>
+      <a href="https://www.instagram.com/mill.scale/?hl=en">insta</a>
+    </div>
+  </header>
 
   {% if shop.customer_accounts_enabled %}
     {% if customer %}
@@ -40,6 +47,66 @@
 
   <main role="main">
     {{ content_for_layout }}
+    {% comment %} {{ 'home-image.png' | asset_url }} {% endcomment %}
+    <div>
+      <img src="//cdn.shopify.com/s/files/1/0467/0049/5015/t/5/assets/home-image.png?v=54031112577287740" width="100%" height="80%">
+    </div>
+    <div>
+      POPULAR ITEMS
+    </div>
+    <div>
+      {%  assign collection2 = collections["Popular-Items"] %}
+      {% for product in collection2.products %}
+          <a href="{{ product.url | within: collection }}">
+              <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
+          </a>
+          <div>
+            {{ product.title }}
+          </div>
+          <div>
+            <a href="{{ product.url | within: collection }}">
+                See Details
+            </a>
+          </div>
+      {% endfor %}
+    </div>
   </main>
+
+
+  <footer class="footer">
+    <div>
+    Got Questions?
+    </div>
+    <div>
+      {% for link in linklists.footer.links %}
+        <div>
+        {% assign child_list_handle = link.title | handleize %}
+        {% if linklists[child_list_handle].links != blank %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+          [{% for childlink in linklists[child_list_handle].links %}
+            <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+          {% endfor %}]
+        {% else %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+    <div>
+      <div>
+        Giving Back
+      </div>
+      <div>
+        Warranty
+      </div>
+      <div>
+        Terms of Service
+      </div>
+      <div>
+        Privacy Policy
+      </div>
+    </div>
+  </footer>
 </body>
+
 </html>
