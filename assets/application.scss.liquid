@@ -2,12 +2,9 @@
 // Shopify will compile SCSS/SASS on each deploy.
 // Note: "@import" rules aren’t supported.
 
-html {
-    padding: 0;
-    margin: 0;
-}
-
 html, body {
+  padding: 0;
+  margin: 0;
   height: 100%;
   width: 100%;
   display: flex;
@@ -70,4 +67,30 @@ footer > div > div{
 .collection{
     display: flex;
     flex-wrap: wrap;
+}
+ 
+.popular{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.popular > div {
+    flex: 1;
+}
+
+.popular > div > div{
+    display: block;
+    text-align: center;
+    padding-bottom: 2%;
+}
+
+.border {
+    margin: 0 30% 30% 30%;
+    border-style: solid
+}
+
+.smokerLogo {
+  background-color: #FFECD1;
+  color: #191818;
+  text-align: center;
 }
