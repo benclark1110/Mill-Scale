@@ -10,7 +10,7 @@ TEST COLLECITON PAGE
             <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
           </a>
         </div>
-        <div>
+        <div class="productBorder">
           <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
         </div>
       </div>
