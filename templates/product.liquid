@@ -32,19 +32,19 @@
 </div>
 
 
-    {% comment %} {% for image in product.images %}
-      <a href="{{ image.src | img_url: 'large' }}">
-        <img src="{{ image.src | img_url: 'compact' }}" alt="{{ image.alt | escape }}">
-      </a>
-    {% endfor %}
-    {% endcomment %}
-    {% comment %} {% for product in collection.products %}
-          <div class="grid-product">
-            <a href="{{ product.url }}">
-              <img src="{{ product.featured_image.src | img_url: '300x' }}" alt="{{ product.featured_image.alt | escape }}">
-            </a>
-            <a href="{{ product.url }}">{{ product.title }}</a>
-              <p>{{ product.price | money }}</p>
-              {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
-          </div>
-        {% endfor %} {% endcomment %}
+{% comment %} {% for image in product.images %}
+  <a href="{{ image.src | img_url: 'large' }}">
+    <img src="{{ image.src | img_url: 'compact' }}" alt="{{ image.alt | escape }}">
+  </a>
+{% endfor %}
+{% endcomment %}
+{% comment %} {% for product in collection.products %}
+      <div class="grid-product">
+        <a href="{{ product.url }}">
+          <img src="{{ product.featured_image.src | img_url: '300x' }}" alt="{{ product.featured_image.alt | escape }}">
+        </a>
+        <a href="{{ product.url }}">{{ product.title }}</a>
+          <p>{{ product.price | money }}</p>
+          {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
+      </div>
+    {% endfor %} {% endcomment %}
