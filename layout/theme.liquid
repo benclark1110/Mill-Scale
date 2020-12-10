@@ -21,11 +21,15 @@
       {% for link in linklists.main-menu.links %}
         {% assign child_list_handle = link.title | handleize %}
         {% if linklists[child_list_handle].links != blank %}
-          <a href="{{ link.url }}">{{ link.title }}>></a>
-          {% comment %} {% for childlink in linklists[child_list_handle].links %}
-            <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
-          {% endfor %} {% endcomment %}
+        <div class="dropdown">
+          <button  class="dropbtn">{{ link.title }}>></button>
+          <div class="dropdown-content">
+            {% for childlink in linklists[child_list_handle].links %}
+              <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+            {% endfor %}
+          </div>
         {% else %}
+        </div>
           <a href="{{ link.url }}">{{ link.title }}</a>
         {% endif %}
       {% endfor %}
@@ -39,6 +43,8 @@
       </a>
     </div>
   </header>
+
+
 
   {% if shop.customer_accounts_enabled %}
     {% if customer %}
