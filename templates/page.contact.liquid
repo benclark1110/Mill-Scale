@@ -1,14 +1,35 @@
-<h1>{{ page.title }}</h1>
-{% form 'contact' %}
-  {% if form.posted_successfully? %} Thank you for your contact {% endif %}
-  {{ form.errors | default_errors }}
-  <label for="ContactFormFirstName">First Name</label>
-  <input type="text" id="ContactFormFirstName" name="contact[firstName]">
-  <label for="ContactFormLastName">Last Name</label>
-  <input type="text" id="ContactFormLastName" name="contact[lastName]">
-  <label for="ContactFormEmail">Email</label>
-  <input type="email" id="ContactFormEmail" name="contact[email]">
-  <label for="ContactFormMessage">Subject</label>
-  <textarea rows="10" id="ContactFormMessage" name="contact[body]"></textarea>
-  <input type="submit" value="send">
-{% endform %}
+<div class='rowItem'>
+    <div class='columnItem'>
+        <h1>{{ page.title }}</h1>
+        <h1>Find Us</h1>
+        <p>Millscale Metalworks</p>
+        <p>Address Line 1</p>
+        <p>Lockhart, TX</p>
+        <br>
+        <h1>Write Us</h1>
+        <p>Contact Form</p>
+        <p>Specific</p>
+        <br>
+        <h1>Follow Us</h1>
+        <p>Instagram</p>
+        <p>Facebook</p>
+    </div>
+    <div class='columnItem'>
+        <h1>Send us a message</h1>
+        {% form 'contact' %}
+        {% if form.posted_successfully? %} Thank you for your contact {% endif %}
+        {{ form.errors | default_errors }}
+        <label for="ContactFormFirstName">First Name</label>
+        <input type="text" id="ContactFormFirstName" name="contact[firstName]">
+        <label for="ContactFormLastName">Last Name</label>
+        <input type="text" id="ContactFormLastName" name="contact[lastName]">
+        <label for="ContactFormEmail">Email</label>
+        <input type="email" id="ContactFormEmail" name="contact[email]">
+        <label for="ContactFormSubject">Subject</label>
+        <textarea type="text" id="ContactFormSubject" name="contact[subject]"></textarea>
+        <label for="ContactFormMessage">Message</label>
+        <textarea rows="10" id="ContactFormMessage" name="contact[body]"></textarea>
+        <input type="submit" value="Send">
+      {% endform %}
+    </div>
+</div>
