@@ -47,8 +47,7 @@ footer {
   display: flex;
   flex-shrink: 0;
   background-color: #191818;
-  margin-right: 10%;
-  margin-left: 10%;
+  margin: 3%;
 }
 
 footer > div{
@@ -57,6 +56,7 @@ footer > div{
   height: 100px;
   display: block;
   justify-content: center;
+  flex: 1;
 }
 
 footer > div > div{
@@ -131,6 +131,12 @@ footer > div > div{
 @media(min-width: 800px) {
     .rowItem {
         display: flex;
+    }
+}
+
+@media(max-width: 600px) {
+    .footerSecond {
+      display: none;
     }
 }
 

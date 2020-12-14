@@ -95,15 +95,17 @@
 
 
   <footer class="footer">
-    <a href="https://mill-scale.myshopify.com/">
-          <img src="//cdn.shopify.com/s/files/1/0467/0049/5015/t/5/assets/Footer_Icon.svg?v=18218190162933745886" width="70%" height="70%">
-    </a>
     <div>
-    <a href="https://mill-scale.myshopify.com/pages/contact">
-    Got Questions?
-    </a>
+      <a href="https://mill-scale.myshopify.com/">
+        <img src="//cdn.shopify.com/s/files/1/0467/0049/5015/t/5/assets/Footer_Icon.svg?v=18218190162933745886" width="70%" height="70%">
+      </a>
     </div>
     <div>
+      <a href="https://mill-scale.myshopify.com/pages/contact">
+      Got Questions?
+      </a>
+    </div>
+    <div class="footerSecond">
       {% for link in linklists.footer.links %}
         <div>
         {% assign child_list_handle = link.title | handleize %}
@@ -117,11 +119,11 @@
         {% endif %}
         </div>
       {% endfor %}
-    </div>
-    <div>
       <div>
-        Giving Back
+        <a href="https://mill-scale.myshopify.com/pages/giving-back">Giving Back</a>
       </div>
+    </div>
+    <div class="footerSecond">
       <div>
         Warranty
       </div>
