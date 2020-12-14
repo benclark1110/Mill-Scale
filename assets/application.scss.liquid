@@ -17,19 +17,6 @@ main {
   flex: 1 0 auto;
 }
 
-.testing {
-  display: flex;
-  justify-content: center;
-}
-
-.testing {
-    a {
-        margin: 10px;
-        padding: 20px;
-        font-size: 30px;
-    }
-}
-
 a {
   text-decoration: none;
   color: #FFECD1
@@ -38,7 +25,6 @@ a {
 header {
   display: flex;
   flex-shrink: 0;
-  background-color: #191818;
   margin-right: 10%;
   margin-left: 10%;
 }
@@ -148,12 +134,6 @@ footer > div > div{
     }
 }
 
-@media(max-width: 600px) {
-    .footerSecond {
-      display: none;
-    }
-}
-
 .columnItem {
     flex: 1
 }
@@ -172,13 +152,12 @@ footer > div > div{
 
 .topnav {
   overflow: hidden;
-  background-color: #333;
 }
 
 .topnav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: #FFECD1;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -272,5 +251,8 @@ footer > div > div{
     display: block;
     width: 100%;
     text-align: left;
+  }
+  .footerSecond {
+      display: none;
   }
 }
