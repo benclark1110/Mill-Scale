@@ -9,7 +9,8 @@ html, body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #191818;
+  background: url("Background.png");
+  {% comment %} background-color: #191818; {% endcomment %}
   color: #FFECD1
 }
 
@@ -31,7 +32,6 @@ header {
 footer {
   display: flex;
   flex-shrink: 0;
-  background-color: #191818;
   margin: 3%;
 }
 
@@ -50,28 +50,28 @@ footer > div > div{
 }
 
 .collection{
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
  
 .popular{
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .popular > div {
-    flex: 1;
+  flex: 1;
 }
 
 .popular > div > div{
-    display: block;
-    text-align: center;
-    padding-bottom: 2%;
+  display: block;
+  text-align: center;
+  padding-bottom: 2%;
 }
 
 .popularBorder {
-    margin: 0 30% 30% 30%;
-    border-style: solid;
+  margin: 0 30% 30% 30%;
+  border-style: solid;
 }
 
 .smokerLogo {
@@ -95,22 +95,26 @@ footer > div > div{
 }
 
 .collection{
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .collection > div {
-    flex: 1;
+  flex: 1;
 }
 
 .collection > div > div{
-    display: block;
-    text-align: center;
-    padding-bottom: 2%;
+  display: block;
+  text-align: center;
+  padding-bottom: 2%;
 }
 
 .productBorder {
-    border-top-style: solid;
+  background-color: #1F1F1F;
+  border-top-style: solid;
+  margin: 0 15% 0 15%;
+  position:relative;
+  bottom: 30px;
 }
 
 .row {
@@ -128,9 +132,9 @@ footer > div > div{
 }
 
 @media(min-width: 800px) {
-    .rowItem {
-        display: flex;
-    }
+  .rowItem {
+      display: flex;
+  }
 }
 
 .columnItem {
