@@ -9,6 +9,7 @@
         </a>
         <p class="columnItem">{{ item.product.title }}</p>
         <p class="columnItem">{{ item.price | money }}</p>
+        <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">REMOVE</a>
         </div>
     {% endfor %}
     <hr>
