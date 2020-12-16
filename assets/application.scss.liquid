@@ -29,6 +29,25 @@ header {
   justify-content: center;
 }
 
+{% comment %} header > div{
+  display: flex;
+  flex-shrink: 0;
+  margin: 3%;
+}
+
+header > div > div, header > div > a {
+  flex-grow: 1;
+  flex-basis: 33%;
+  height: 100px;
+  display: block;
+  justify-content: center;
+  flex: 1;
+} {% endcomment %}
+
+.insta {
+  filter: invert(95%) sepia(9%) saturate(1355%) hue-rotate(313deg) brightness(103%) contrast(103%);
+}
+
 footer {
   display: flex;
   flex-shrink: 0;
@@ -280,6 +299,6 @@ footer > div > div{
 
   .topnav.responsive .active img {
     width: auto;
-    height: auto;
+    height: 100%
   }
 }
