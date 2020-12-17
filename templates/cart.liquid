@@ -1,22 +1,37 @@
-{% if cart.item_count > 0 %}
-  <h1 class="outline">Cart ({{ cart.item_count }})</h1>
-  <hr>
-  <form action="/cart" method="post" novalidate>
-    {% for item in cart.items %}
-      <div class="rowItem">
-        <a class="columnItem" href="{{ item.url | within: collections.all }}">
-          <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
-        </a>
-        <p class="columnItem">{{ item.product.title }}</p>
-        <p class="columnItem">{{ item.price | money }}</p>
-        <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">REMOVE</a>
-        </div>
-    {% endfor %}
-    <hr>
-    <p>Taxes + shipping calculated at checkout</p>
-    <p>Subtotal........................{{ cart.total_price | money }}</p>
-    <button type="submit" name="checkout">Check Out - {{ cart.total_price | money }}</button>
-  </form>
+<div class="rowItem">
+  <div class="columnItem">
+  </div>
+  {% if cart.item_count > 0 %}
+    <div class="columnItem">
+      <h1 class="outline">Cart ({{ cart.item_count }})</h1>
+      <hr>
+      <form action="/cart" method="post" novalidate>
+        {% for item in cart.items %}
+          <div class="rowItem">
+            <a class="columnItem" href="{{ item.url | within: collections.all }}">
+              <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
+            </a>
+            <p class="columnItem">{{ item.product.title }}</p>
+            <p class="columnItem">{{ item.price | money }}</p>
+            <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">REMOVE</a>
+            </div>
+        {% endfor %}
+        <hr>
+        <p>Taxes + shipping calculated at checkout</p>
+        <p>Subtotal..........{{ cart.total_price | money }}</p>
+        <button type="submit" name="checkout">Check Out - {{ cart.total_price | money }}</button>
+      </form>
+    </div>
+{% else %}
+  <div class="columnItem">
+    <h1 class="outline">Cart</h1>
+    <p>It appears your cart is empty.</p>
+    TEST
+    <p>Let's fix that.</p>
+    <a href="https://mill-scale.myshopify.com/collections/cookers">Shop products</a>
+  </div>
+{% endif %}
+</div>
 
 
 
@@ -60,9 +75,3 @@
       <button type="submit" name="checkout">Checkout</button>
     </div>
   </form> {% endcomment %}
-{% else %}
-  <h1 class="outline">Cart</h1>
-  <p>It appears your cart is empty.</p>
-  <p>Let's fix that.</p>
-  <a href="https://mill-scale.myshopify.com/collections/cookers">Shop products</a>
-{% endif %}
