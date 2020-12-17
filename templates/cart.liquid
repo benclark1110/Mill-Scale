@@ -1,18 +1,18 @@
-<div class="rowItem">
-  <div class="columnItem">
+<div class="row">
+  <div class="column">
   </div>
   {% if cart.item_count > 0 %}
-    <div class="columnItem">
+    <div class="column">
       <h1 class="outline">Cart ({{ cart.item_count }})</h1>
-      <hr>
       <form action="/cart" method="post" novalidate>
+        <hr>
         {% for item in cart.items %}
-          <div class="rowItem">
-            <a class="columnItem" href="{{ item.url | within: collections.all }}">
+          <div class="row">
+            <a class="column" href="{{ item.url | within: collections.all }}">
               <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
             </a>
-            <p class="columnItem">{{ item.product.title }}</p>
-            <p class="columnItem">{{ item.price | money }}</p>
+            <p class="column">{{ item.product.title }}</p>
+            <p class="column">{{ item.price | money }}</p>
             <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">REMOVE</a>
             </div>
         {% endfor %}
@@ -23,10 +23,9 @@
       </form>
     </div>
 {% else %}
-  <div class="columnItem">
+  <div class="column">
     <h1 class="outline">Cart</h1>
     <p>It appears your cart is empty.</p>
-    TEST
     <p>Let's fix that.</p>
     <a href="https://mill-scale.myshopify.com/collections/cookers">Shop products</a>
   </div>
