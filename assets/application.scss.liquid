@@ -165,6 +165,37 @@ footer > div > div{
   flex: 1;
 }
 
+.cartBreak {
+  border-color: #B39457;
+}
+
+.cartColumn {
+  padding: 2%;
+}
+
+.cartColumn > h1 {
+  color: #B39457;
+}
+
+.productRow{
+  margin-top: 25px;
+}
+
+.cartImage{
+  width: 100%;
+  height: auto;
+}
+
+.subtotal{
+  display : flex;
+} 
+
+.dot{
+  flex: 1;
+  border-bottom: 2.5px dotted #FFECD1;
+  height: .75em;
+}
+
 .rowItem {
   align-items: center
 }
@@ -233,7 +264,7 @@ footer > div > div{
   color: #FFECD1;
 }
 
-.contactForm {
+.contactForm, .cartColumn {
   background-color: #1F1F1F;
   border-top-style: solid;
 }
@@ -280,7 +311,8 @@ footer > div > div{
   width: 98%;
 }
 
-#ContactSend {
+#ContactSend, #CartCheckout{
+  background-color: #1F1F1F;
   border-style: solid;
   border-color: #B39457;
   color: #B39457;
@@ -392,5 +424,18 @@ footer > div > div{
   .topnav.responsive .active img {
     width: auto;
     height: 100%
+  }
+
+  .cartCollapse {
+    display: none;
+  }
+
+  .collection {
+    flex-direction: column;
+  }
+
+  .productImages {
+    width: 100%;
+    height: auto;
   }
 }

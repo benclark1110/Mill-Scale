@@ -1,25 +1,32 @@
 <div class="row">
-  <div class="column">
+  <div class="column cartCollapse">
   </div>
   {% if cart.item_count > 0 %}
-    <div class="column">
+    <div class="column cartColumn">
       <h1 class="outline">Cart <sup>({{ cart.item_count }})</sup></h1>
       <form action="/cart" method="post" novalidate>
-        <hr>
+        <hr class="cartBreak">
         {% for item in cart.items %}
-          <div class="row">
+          <div class="row productRow">
             <a class="column" href="{{ item.url | within: collections.all }}">
-              <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
+              <img class="cartImage"src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
             </a>
-            <p class="column">{{ item.product.title }}</p>
-            <p class="column">{{ item.price | money }}</p>
-            <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">REMOVE</a>
+            <div class="column">
+              <div class="row">
+                <p class="column">{{ item.product.title }}</p>
+                <p class="column">{{ item.price | money }}</p>
+              </div>
+              <div class="row">
+                <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">REMOVE</a>
+              </div>
             </div>
+          </div>
+          <br>
         {% endfor %}
-        <hr>
+        <hr class="cartBreak">
         <p>Taxes + shipping calculated at checkout</p>
-        <p>Subtotal..........{{ cart.total_price | money }}</p>
-        <button type="submit" name="checkout">Check Out - {{ cart.total_price | money }}</button>
+        <p class="subtotal">Subtotal<span class="dot"></span>{{ cart.total_price | money }}</p>
+        <button id="CartCheckout" type="submit" name="checkout">Check Out - {{ cart.total_price | money }}</button>
       </form>
     </div>
 {% else %}
