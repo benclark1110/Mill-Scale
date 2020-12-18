@@ -3,7 +3,7 @@
   </div>
   {% if cart.item_count > 0 %}
     <div class="column">
-      <h1 class="outline">Cart ({{ cart.item_count }})</h1>
+      <h1 class="outline">Cart <sup>({{ cart.item_count }})</sup></h1>
       <form action="/cart" method="post" novalidate>
         <hr>
         {% for item in cart.items %}

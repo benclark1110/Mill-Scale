@@ -1,35 +1,44 @@
-<div class='rowItem'>
-    <div class='columnItem'>
-        <h1 class="outline">{{ page.title }}</h1>
-        <h1>Find Us</h1>
+<div class='rowItem contactPage'>
+    <div class='columnItem contactInfo'>
+        <h3 class="outline">{{ page.title }}</h3>
+        <br>
+        <h3>Find Us</h3>
         <p>Millscale Metalworks</p>
         <p>Address Line 1</p>
         <p>Lockhart, TX</p>
         <br>
-        <h1>Write Us</h1>
+        <h3>Write Us</h3>
         <p>Contact Form</p>
         <p>Specific</p>
         <br>
-        <h1>Follow Us</h1>
+        <h3>Follow Us</h3>
         <p>Instagram</p>
         <p>Facebook</p>
     </div>
-    <div class='columnItem'>
-        <h1>Send us a message</h1>
+    <div class='columnItem contactForm'>
+        <h3 class="outline contactLabel">Send us a message</h3>
         {% form 'contact' %}
-        {% if form.posted_successfully? %} Thank you for your contact {% endif %}
-        {{ form.errors | default_errors }}
-        <label for="ContactFormFirstName">First Name</label>
-        <input type="text" id="ContactFormFirstName" name="contact[firstName]">
-        <label for="ContactFormLastName">Last Name</label>
-        <input type="text" id="ContactFormLastName" name="contact[lastName]">
-        <label for="ContactFormEmail">Email</label>
-        <input type="email" id="ContactFormEmail" name="contact[email]">
-        <label for="ContactFormSubject">Subject</label>
-        <textarea type="text" id="ContactFormSubject" name="contact[subject]"></textarea>
-        <label for="ContactFormMessage">Message</label>
-        <textarea rows="10" id="ContactFormMessage" name="contact[body]"></textarea>
-        <input type="submit" value="Send">
-      {% endform %}
+          {% if form.posted_successfully? %} Thank you for your contact {% endif %}
+          {{ form.errors | default_errors }}
+          <label for="ContactFormFirstName"></label>
+          <input class=".inline" type="text" id="ContactFormFirstName" name="contact[firstName]" placeholder="First Name">
+          <label for="ContactFormLastName"></label>
+          <input class=".inline" type="text" id="ContactFormLastName" name="contact[lastName]" placeholder="Last Name">
+          <label for="ContactFormEmail"></label>
+          <input type="email" id="ContactFormEmail" name="contact[email]" placeholder="Email">
+          <label for="ContactFormSubject"></label>
+          <input type="text" id="ContactFormSubject" name="contact[subject]" placeholder="Subject">
+          <p>What are you interested in?</p>
+          <p class="inline"><input type="checkbox" id="ContactForm94Gallon" name="contact[94Gallon]">94 Gallon</p>
+          <p class="inline"><input type="checkbox" id="ContactForm500Gallon" name="contact[500Gallon]">500 Gallon</p>
+          <p class="inline"><input type="checkbox" id="ContactForm1000Gallon" name="contact[1000Gallon]">1000 Gallon</p>
+          <p class="inline"><input type="checkbox" id="ContactFormOpenFireGrill" name="contact[OpenFireGrill]">Open fire grill</p>
+          <p class="inline"><input type="checkbox" id="ContactFormYakitori" name="contact[Yakitori]">Yakitori</p>
+          <p class="inline"><input type="checkbox" id="ContactFormFirePit" name="contact[FirePit]">Fire pit</p>
+          <p class="inline"><input type="checkbox" id="ContactFormShippingQuote" name="contact[ShippingQuote]">Shipping quote - include</p>
+          <label for="ContactFormMessage" id="MessageText">Message</label>
+          <textarea rows="10" id="ContactFormMessage" name="contact[body]"></textarea>
+          <input type="submit" value="Send" id="ContactSend">
+        {% endform %}
     </div>
 </div>
