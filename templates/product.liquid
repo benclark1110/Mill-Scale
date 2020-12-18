@@ -4,17 +4,20 @@
   <div class='columnItem'>
     <img src="{{ featured_image | img_url: 'large' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
   </div>
-  <div class='columnItem'>
-    <h1>{{ collection.title }}</h1>
-    <h1 class="outline">{{ product.title }}</h1>
-    <h1>PRICE {{ current_variant.price | money }}</h1>
-    <hr>
+  <div class='columnItem productColumn'>
+    <h4>{{ collection.title }}</h3>
+      <h3 class="outline productPage">{{ product.title }}</h3>
+    <div>
+      <h3 class="productPricing">PRICE</h3>
+      <h3 id="ProductPrice" class="productPricing"> {{ current_variant.price | money }}</h3>
+    </div>
+    <hr class="hrColor">
     <h2>{{ product.description }}</h2>
     <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
       <select name="id" id="productSelect">
         {% for variant in product.variants %}
           {% if variant.available %}
-            <option value="{{ variant.id }}">
+            {% comment %} <option value="{{ variant.id }}"> {% endcomment %}
               {% comment %} {{ variant.title }} - {{ variant.price | money_with_currency }} {% endcomment %}
             </option>
           {% else %}
