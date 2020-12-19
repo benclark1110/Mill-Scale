@@ -16,6 +16,7 @@ html, body {
 
 main {
   flex: 1 0 auto;
+  margin-top: 130px;
 }
 
 a {
@@ -24,12 +25,10 @@ a {
 }
 
 header {
-  display: flex;
-  width: 100%;
-  justify-content: center;
+  z-index: 1;
 }
 
-{% comment %} header > div{
+header > div{
   display: flex;
   flex-shrink: 0;
   margin: 3%;
@@ -42,7 +41,7 @@ header > div > div, header > div > a {
   display: block;
   justify-content: center;
   flex: 1;
-} {% endcomment %}
+}
 
 .insta {
   filter: invert(95%) sepia(9%) saturate(1355%) hue-rotate(313deg) brightness(103%) contrast(103%);
@@ -280,6 +279,17 @@ footer > div > div{
   display: none;
 }
 
+.topnav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin-left: 0;
+}
+
+.footer {
+  margin-right: 0
+}
+
 {% comment %} -------------- CONTACT PAGE -------------- {% endcomment %}
 
 .contactPage{
@@ -391,6 +401,10 @@ footer > div > div{
   display: inline;
 }
 
+.dropdown-content a, .dropdown-content img {
+  z-index: -1;
+}
+
 .topnav a:hover, .dropdown:hover .dropbtn {
   background-color: #555;
   color: white;
@@ -424,6 +438,8 @@ footer > div > div{
 
   .topnav.responsive {
     position: relative;
+    flex-direction: column;
+    margin: 0;
   }
 
   .topnav.responsive .icon {
@@ -455,6 +471,11 @@ footer > div > div{
     width: 100%;
     text-align: left;
   }
+
+  .footer {
+    margin-left: 0;
+  }
+
   .footerSecond {
       display: none;
   }
@@ -486,5 +507,11 @@ footer > div > div{
 @media screen and (max-width: 600px) {
   .heroBorder {
     bottom: -40px;
+  }
+}
+
+@media (min-width: 1100px) {
+  main {
+    margin-top: 200px;
   }
 }
