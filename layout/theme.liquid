@@ -28,7 +28,7 @@
         {% for collection in collections %}
           {% unless collection.title == 'Popular Items' %}
             <a href="{{ collection.url }}">{{ collection.title | escape }} &rsaquo;</a>
-            <img src="{{ collection.image.src | img_url: 'medium' }}" alt="{{ collection.image.alt | escape }}">
+            <img class="headerImage" src="{{ collection.image.src | img_url: 'medium' }}" alt="{{ collection.image.alt | escape }}">
           {% endunless %}
         {% endfor %}
         </div>
