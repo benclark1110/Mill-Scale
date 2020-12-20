@@ -28,8 +28,8 @@
         {% for collection in collections %}
           {% unless collection.title == 'Popular Items' %}
             <div class="dropdownImage">
-              <a class="centered" href="{{ collection.url }}">{{ collection.title | escape }}</a>
-              <a class="hide" href="{{ collection.url }}"><img class="headerImage" src="{{ collection.image.src | img_url: 'large' }}" alt="{{ collection.image.alt | escape }}"></a>
+              <h2 class="centered" href="{{ collection.url }}">{{ collection.title | escape }}</h2>
+              <a class="hide" href="{{ collection.url }}"><img class="headerImage" src="{{ collection.image.src | img_url: 'medium' }}" alt="{{ collection.image.alt | escape }}"></a>
             </div>
           {% endunless %}
         {% endfor %}
@@ -82,7 +82,7 @@
     </div><script src="https://player.vimeo.com/api/player.js"></script>
     <div class="testingShit">
       <div>
-        <h1 style="margin-left: 2%;" class="outline">POPULAR ITEMS</h1>
+        <h1 style="margin-left: 2%; color: #B39457;" class="outline">POPULAR ITEMS</h1>
       </div>
       <div class='popular'>
           {%  assign collection2 = collections["Popular-Items"] %}
@@ -97,7 +97,7 @@
                 {{ product.title }}
               </div>
               <div class="popularBorder">
-                <a href="{{ product.url | within: collection }}">
+                <a style="color: #B39457;"href="{{ product.url | within: collection }}">
                     See Details
                 </a>
               </div>
