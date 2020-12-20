@@ -240,7 +240,7 @@ footer > div > div{
   align-items: flex-start;
 }
 
-.productColumn, .outStory, .givingBackColumn {
+.productColumn, .outStory, .givingBackColumn, .contactText {
   font-size: 2vmin;
   line-height: 150%;
 }
@@ -362,7 +362,7 @@ footer > div > div{
 }
 
 .inline {
-  display: inline;
+  display: inline-block;
 }
 
 #MessageText, .testingShit {
@@ -421,13 +421,14 @@ footer > div > div{
 }
 
 .topnav a:hover, .dropdown:hover .dropbtn {
-  background-color: #555;
-  color: white;
+  border-top-style: solid;
+  {% comment %} color: white; {% endcomment %}
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
-  color: black;
+  {% comment %} background-color: #ddd; {% endcomment %}
+  color: #B39457;
+  border: none;
   justify-content: space-between;
 }
 
