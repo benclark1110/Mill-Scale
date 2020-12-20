@@ -1,9 +1,9 @@
-<div class='rowItem'>
+<div class='rowItem productDetailRow'>
   {% assign current_variant = product.selected_or_first_available_variant %}
   {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
   <div class='columnItem'>
     {% for image in product.images %}
-    <img class="productImages" src="{{ image.src | product_img_url: 'large' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
+    <img class="productDetailImages" src="{{ image.src | product_img_url: 'large' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
     {% endfor %}
   </div>
   <div class='columnItem productColumn'>
@@ -14,7 +14,7 @@
       <h3 id="ProductPrice" class="productPricing"> {{ current_variant.price | money }}</h3>
     </div>
     <hr class="hrColor">
-    <h2>{{ product.description }}</h2>
+    <p>{{ product.description }}</p>
     <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
       <select name="id" id="productSelect">
         {% for variant in product.variants %}
@@ -30,8 +30,8 @@
         {% endfor %}
       </select>
       {% comment %} {{ current_variant.price | money }} {% endcomment %}
-      <label for="Quantity">quantity</label>
-      <input type="number" id="Quantity" name="quantity" value="1" min="1">
+      {% comment %} <label for="Quantity">quantity</label> {% endcomment %}
+      {% comment %} <input type="number" id="Quantity" name="quantity" value="1" min="1"> {% endcomment %}
       <button type="submit" name="add" id="AddToCart">Add to cart</button>
     </form>
   </div>
