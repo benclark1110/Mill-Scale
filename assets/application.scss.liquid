@@ -340,6 +340,9 @@ footer > div > div{
   text-decoration: none;
   font-size: 17px;
 }
+.topnav div {
+  padding: 14px 16px;
+}
 
 .topnav .icon {
   display: none;
@@ -350,6 +353,10 @@ footer > div > div{
   top: 0;
   width: 100%;
   margin-left: 0;
+}
+
+.active {
+  padding-top: 0 !important;
 }
 
 {% comment %} -------------- CONTACT PAGE -------------- {% endcomment %}
@@ -449,6 +456,7 @@ footer > div > div{
   background-color: inherit;
   font-family: inherit;
   margin: 0;
+  padding-top: 0;
 }
 
 .dropdown-content {
@@ -568,6 +576,10 @@ footer > div > div{
     display: block;
     width: 100%;
     text-align: left;
+  }
+
+  .dropdown .dropbtn {
+    padding-left: 0;
   }
 
   .topnav.responsive .dropdown {
