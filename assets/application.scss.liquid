@@ -331,7 +331,7 @@ footer > div > div{
   font-family: 'UnitedSans', sans-serif;
 }
 
-.topnav a {
+.topnav > a {
   float: left;
   display: block;
   color: #FFECD1;
@@ -340,7 +340,7 @@ footer > div > div{
   text-decoration: none;
   font-size: 17px;
 }
-.topnav div {
+.topnav > div {
   padding: 14px 16px;
 }
 
@@ -465,12 +465,14 @@ footer > div > div{
   background-color: #FFECD1;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  right: .15%;
+  padding-right: 1%;
+  margin-right: -.2%;
 }
 
 .dropdown-content a {
   float: none;
   color: #FFECD1;;
-  padding: 12px 16px;
   text-decoration: none;
   display: block;
   text-align: left;
@@ -499,12 +501,20 @@ footer > div > div{
 .dropdownImage {
   position: relative;
   text-align: center;
+  padding: 1% 0 .5% 1%;
 }
-
-
 
 .dropdown-content > .dropdownImage {
   display: inline;
+}
+
+.headerImage {
+  width: 100%;
+  height: auto;
+}
+
+.hide {
+  padding: 0;
 }
 
 {% comment %} .dropdown-content {
@@ -517,7 +527,7 @@ footer > div > div{
 @media (min-width: 600px) {
   .centered {
     position: absolute;
-    top: 30%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
