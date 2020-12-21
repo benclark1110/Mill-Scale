@@ -7,14 +7,19 @@
     {% endfor %}
   </div>
   <div class='columnItem productColumn'>
-    <h4>{{ collection.title }}</h3>
-      <h3 class="outline productPage">{{ product.title }}</h3>
+    <h3>{{ collection.title }}</h3>
+      <h1 class="outline productPage">{{ product.title }}</h1>
     <div>
       <h3 class="productPricing">PRICE</h3>
       <h3 id="ProductPrice" class="productPricing"> {{ current_variant.price | money }}</h3>
     </div>
     <hr class="hrColor">
     <p>{{ product.description }}</p>
+    <br>
+    <h3>+ Outside the US?</h3>
+    <hr class="hrColor">
+    <h3>+ FAQ</h3>
+    <hr class="hrColor">
     <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
       <select name="id" id="productSelect">
         {% for variant in product.variants %}
@@ -32,6 +37,8 @@
       {% comment %} {{ current_variant.price | money }} {% endcomment %}
       {% comment %} <label for="Quantity">quantity</label> {% endcomment %}
       {% comment %} <input type="number" id="Quantity" name="quantity" value="1" min="1"> {% endcomment %}
+      <br>
+      <br>
       <button type="submit" name="add" id="AddToCart">Add to cart</button>
     </form>
   </div>
