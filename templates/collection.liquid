@@ -7,7 +7,7 @@
         {% comment %} {{ product.price | money }} {% endcomment %}
         {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
         <a href="{{ product.url | within: collection }}">
-          <img class="productImages" src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
+          <img style="width: 360px; height: 360px;"class="productImages" src="{{ product.featured_image.src | img_url: 'original' }}" alt="{{ product.featured_image.alt | escape }}">
         </a>
       </div>
       <div class="productBorder">
