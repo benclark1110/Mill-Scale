@@ -469,8 +469,8 @@ footer > div > div{
   display: inline;
 }
 
-.topnav a:hover, .dropdown:hover .dropbtn {
-  border-top-style: solid;
+.topnav a:hover:not(.navHover), .dropdown:hover .dropbtn {
+  border-bottom-style: solid;
   {% comment %} color: white; {% endcomment %}
 }
 
@@ -603,7 +603,7 @@ footer > div > div{
   }
 
   .heroImage {
-    margin: 0;
+    margin: 3% 0 0 0;
   }
 
   .heroBorder {
