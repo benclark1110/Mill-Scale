@@ -28,7 +28,7 @@
         {% for collection in collections %}
           {% unless collection.title == 'Popular Items' %}
             <div class="dropdownImage">
-              <h2 class="centered" href="{{ collection.url }}">{{ collection.title | escape }}</h2>
+              <a href="{{ collection.url }}"><h2 class="centered">{{ collection.title | escape }}</h2></a>
               <a class="hide" href="{{ collection.url }}"><img class="headerImage" src="{{ collection.image.src | img_url: 'medium' }}" alt="{{ collection.image.alt | escape }}"></a>
             </div>
           {% endunless %}
@@ -70,7 +70,7 @@
         <img style="position: relative;" src="//cdn.shopify.com/s/files/1/0467/0049/5015/t/5/assets/home-image.png?v=54031112577287740" width="100%" height="80%">
         <div>
           <div class="heroBorder">
-            <h1 style="font-size:3vw;" class="outline">Keep the Fires Burning</h1>
+            <h1 style="font-size:3vw; color: #B39457;" class="outline">Keep the Fires Burning</h1>
             <p style="font-size:2vw;">We build 500 and 1000 gallon offset smokers for competition, commercial, and residential use. Each one is built to suit the pitmaster’s needs. Ready to take your barbecue to the next level?</p>
             <a style="font-size:2vw;" href="https://mill-scale.myshopify.com/collections/cookers/products/offset-smoker" id=HeroDetails>SEE DETAILS</a>
           </div>
@@ -97,7 +97,7 @@
                 {{ product.title }}
               </div>
               <div class="popularBorder">
-                <a style="color: #B39457;"href="{{ product.url | within: collection }}">
+                <a class="united" style="color: #B39457;"href="{{ product.url | within: collection }}">
                     See Details
                 </a>
               </div>
