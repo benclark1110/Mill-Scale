@@ -3,7 +3,7 @@
   </div>
   {% if cart.item_count > 0 %}
     <div class="column cartColumn">
-      <h1 class="outline">Cart <sup>({{ cart.item_count }})</sup></h1>
+      <h1 class="outline united">Cart <sup>({{ cart.item_count }})</sup></h1>
       <form action="/cart" method="post" novalidate>
         <hr class="cartBreak">
         {% for item in cart.items %}
@@ -26,7 +26,7 @@
         <hr class="cartBreak">
         <p>Taxes + shipping calculated at checkout</p>
         <p class="subtotal">Subtotal<span class="dot"></span>{{ cart.total_price | money }}</p>
-        <button id="CartCheckout" type="submit" name="checkout">Check Out - {{ cart.total_price | money }}</button>
+        <button id="CartCheckout" class="united"type="submit" name="checkout">Check Out - {{ cart.total_price | money }}</button>
       </form>
     </div>
 {% else %}

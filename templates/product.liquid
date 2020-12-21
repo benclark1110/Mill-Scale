@@ -7,10 +7,10 @@
     {% endfor %}
   </div>
   <div class='columnItem productColumn'>
-    <h3>{{ collection.title }}</h3>
-      <h1 class="outline productPage">{{ product.title }}</h1>
+    <h3 class="united">{{ collection.title }}</h3>
+      <h1 class="outline productPage united">{{ product.title }}</h1>
     <div>
-      <h3 class="productPricing">PRICE</h3>
+      <h3 class="productPricing united">PRICE</h3>
       <h3 id="ProductPrice" class="productPricing"> {{ current_variant.price | money }}</h3>
     </div>
     <hr class="hrColor">

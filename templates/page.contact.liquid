@@ -1,6 +1,6 @@
 <div class='rowItem contactPage'>
     <div class='columnItem contactInfo'>
-        <h3 class="outline">{{ page.title }}</h3>
+        <h3 class="outline united">{{ page.title }}</h3>
         <br>
         <h3>Write Us</h3>
         <p>Contact Form</p>
@@ -10,7 +10,7 @@
         <a target="_blank" href="https://www.instagram.com/mill.scale/?hl=en">Instagram</a>
     </div>
     <div class='columnItem contactForm'>
-        <h3 class="outline contactLabel">Send us a message</h3>
+        <h3 class="outline contactLabel united">Send us a message</h3>
         {% form 'contact' %}
           {% if form.posted_successfully? %} Thank you for your contact {% endif %}
           {{ form.errors | default_errors }}
@@ -32,7 +32,7 @@
           <p class="inline contactText"><input type="checkbox" id="ContactFormShippingQuote" name="contact[ShippingQuote]">Shipping quote - include</p>
           <label for="ContactFormMessage" id="MessageText">Message</label>
           <textarea rows="10" id="ContactFormMessage" name="contact[body]"></textarea>
-          <input type="submit" value="Send" id="ContactSend">
+          <input type="submit" value="Send" id="ContactSend" class="united">
         {% endform %}
     </div>
 </div>
