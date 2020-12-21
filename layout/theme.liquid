@@ -28,7 +28,7 @@
         {% for collection in collections %}
           {% unless collection.title == 'Popular Items' %}
             <div class="dropdownImage">
-              <a style="height: 10%" href="{{ collection.url }}"><h2 class="centered">{{ collection.title | escape }}</h2></a>
+              <a style="height: 10%" href="{{ collection.url }}"><h2 class="centered united">{{ collection.title | escape }}</h2></a>
               <a class="hide" href="{{ collection.url }}"><img class="headerImage" src="{{ collection.image.src | img_url: 'medium' }}" alt="{{ collection.image.alt | escape }}"></a>
             </div>
           {% endunless %}
