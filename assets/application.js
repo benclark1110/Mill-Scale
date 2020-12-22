@@ -8,6 +8,8 @@ function displayNextImage() {
     document.getElementById("heroHeaderText").innerHTML = text[y];
     z = (z === paragraph.length - 1) ? 0 : z + 1;
     document.getElementById("heroHeaderParagraph").innerHTML = paragraph[z];
+    a = (a === link.length - 1) ? 0 : a + 1;
+    document.getElementById("heroLink").href = link[a];
 }
 
 function displayPreviousImage() {
@@ -17,6 +19,8 @@ function displayPreviousImage() {
     document.getElementById("heroHeaderText").innerHTML = text[y];
     z = (z <= 0) ? paragraph.length - 1 : z - 1;
     document.getElementById("heroHeaderParagraph").innerHTML = paragraph[z];
+    a = (a <= 0) ? link.length - 1 : a - 1;
+    document.getElementById("heroLink").href = link[a];
 }
 
 function startTimer() {
@@ -34,3 +38,7 @@ text[1] = "KEEP THE FIRES BURNING";
 var paragraph = [], z = -1;
 paragraph[0] = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna. my nibh euismod tincidunt ut laoreet dolore magna.";
 paragraph[1] = "We build 500 and 1000 gallon offset smokers for competition, commercial, and residential use. Each one is built to suit the pitmaster’s needs. Ready to take your barbecue to the next level?";
+
+var link = [], a = -1;
+link[0] = "https://mill-scale.myshopify.com/collections/fire-tools";
+link[1] = "https://mill-scale.myshopify.com/collections/cookers/products/offset-smoker";
