@@ -14,11 +14,14 @@
       <h3 id="ProductPrice" class="productPricing"> {{ current_variant.price | money }}</h3>
     </div>
     <hr class="hrColor">
-    <p>{{ product.description }}</p>
+    <p>{{ product.description | split: '~section2~' | first }}</p>
     <br>
     <h3>+ Outside the US?</h3>
     <hr class="hrColor">
-    <h3>+ FAQ</h3>
+    <div>
+      <h3>+ FAQ</h3>
+      <p>{{ product.description | split: '~section2~' | last }}</p>
+    </div>
     <hr class="hrColor">
     <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
       {% if product.variants.size >= 2 %}
