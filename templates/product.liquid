@@ -22,7 +22,7 @@
     <hr class="hrColor">
     <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
       {% if product.variants.size >= 2 %}
-        <select name="id" id="ProductSelect-{{ section.id }}" class="product-single__variants productVariants">
+        <select style="width:100%" name="id" id="ProductSelect-{{ section.id }}" class="product-single__variants productVariants">
           {% for variant in product.variants %}
             {% if variant.available %}
               <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
@@ -34,7 +34,7 @@
           {% endfor %}
         </select>
       {% else %}
-      <select name="id" id="ProductSelect-{{ section.id }}" class="product-single__variants hideVariant">
+      <select style="width:100%" name="id" id="ProductSelect-{{ section.id }}" class="product-single__variants hideVariant">
           {% for variant in product.variants %}
             {% if variant.available %}
               <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
