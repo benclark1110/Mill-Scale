@@ -10,6 +10,8 @@ function displayNextImage() {
     document.getElementById("heroHeaderParagraph").innerHTML = paragraph[z];
     a = (a === link.length - 1) ? 0 : a + 1;
     document.getElementById("heroLink").href = link[a];
+    b = (b === sideText.length - 1) ? 0 : b + 1;
+    document.getElementById("sideText").innerHTML = sideText[b];
 }
 
 function displayPreviousImage() {
@@ -21,6 +23,8 @@ function displayPreviousImage() {
     document.getElementById("heroHeaderParagraph").innerHTML = paragraph[z];
     a = (a <= 0) ? link.length - 1 : a - 1;
     document.getElementById("heroLink").href = link[a];
+    b = (b <= 0) ? sideText.length - 1 : b - 1;
+    document.getElementById("sideText").href = sideText[b];
 }
 
 function startTimer() {
@@ -42,3 +46,7 @@ paragraph[1] = "We build 500 and 1000 gallon offset smokers for competition, com
 var link = [], a = -1;
 link[0] = "https://mill-scale.myshopify.com/collections/fire-tools";
 link[1] = "https://mill-scale.myshopify.com/collections/cookers/products/offset-smoker";
+
+var sideText = [], b = -1;
+sideText[0] = "Handcrafted Fire Tools";
+sideText[1] = "Custom Offset Smokers";
