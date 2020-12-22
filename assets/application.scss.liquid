@@ -121,9 +121,28 @@ footer > div > div{
   font-size: 140%;
 }
 
-.collectionHeadings {
-  margin-left: 2%;
-  margin-right: 2%;
+.collectionsHeader {
+  margin: 0 3% 3% 3%;
+  padding-bottom: 1%;
+  border-bottom-style: solid;
+  border-width: thin;
+  color: #B39457;
+}
+
+.collectionTitles {
+  display: inline;
+  border-style: solid;
+  border-width: thin;
+  padding: 1% 3% 1% 3%;
+  color: #B39457;
+  width: -webkit-fill-available;
+  margin-right: -.4%;
+  {% comment %} margin-right: -.3%; {% endcomment %}
+  {% comment %} margin: 0; {% endcomment %}
+}
+
+.selected {
+  color: #FFECD1;
 }
 
 .collection{
@@ -430,7 +449,7 @@ footer > div > div{
   width: 98%;
 }
 
-#ContactSend, #CartCheckout, #AddToCart, #HeroDetails{
+#ContactSend, #CartCheckout, #AddToCart, #HeroDetails, .productVariants{
   background-color: #1F1F1F;
   border-style: solid;
   border-width: thin;
@@ -496,7 +515,14 @@ footer > div > div{
   width: -webkit-fill-available;
   display: flex;
   justify-content: space-around;
+  top: 70%;
 }
+
+{% comment %} .dropdown:hover .topnav {
+  margin-top: 0;
+  padding-top: 3%;
+  background-color: #FFECD1;
+} {% endcomment %}
 
 .dropdownImage {
   position: relative;
@@ -516,11 +542,6 @@ footer > div > div{
 .hide {
   padding: 0;
 }
-
-{% comment %} .dropdown-content {
-  display: flex;
-  justify-content: space-between;
-} {% endcomment %}
 
 {% comment %} -------------- MEDIA -------------- {% endcomment %}
 

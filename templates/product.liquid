@@ -21,15 +21,13 @@
     <h3>+ FAQ</h3>
     <hr class="hrColor">
     <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
-      <select name="id" id="productSelect">
+      <select name="id" id="ProductSelect-{{ section.id }}" class="product-single__variants productVariants">
         {% for variant in product.variants %}
           {% if variant.available %}
-            <option value="{{ variant.id }}">
-              {% comment %} {{ variant.title }} - {{ variant.price | money_with_currency }} {% endcomment %}
-            </option>
+            <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
           {% else %}
             <option disabled="disabled">
-              {{ variant.title }} - sold out
+              {{ variant.title }} - {{ 'products.product.sold_out' | t }}
             </option>
           {% endif %}
         {% endfor %}

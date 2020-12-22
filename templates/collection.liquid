@@ -1,5 +1,17 @@
 <h1 style="color: #B39457;"class="collectionHeadings">{{ collection.description }}</h1>
-<h1 class="collectionHeadings">{{ collection.title }}</h1>
+<div class="collectionsHeader">
+  {% for collection in collections %}
+    {% unless collection.title == 'Popular Items' %}
+      {% if collection.title == page_title %}
+      <a class="united collectionTitles selected" href="{{ collection.url }}">{{ collection.title | escape }}</a>
+      {% else %}
+      <a class="united collectionTitles" href="{{ collection.url }}">{{ collection.title | escape }}</a>
+      {% endif %}
+    {% endunless %}
+  {% endfor %}
+</div>
+
+
 <div class='collection'>
   {% for product in collection.products %}
     <div>
