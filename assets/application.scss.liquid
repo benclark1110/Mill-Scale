@@ -2,6 +2,13 @@
 // Shopify will compile SCSS/SASS on each deploy.
 // Note: "@import" rules aren’t supported.
 
+@font-face {
+  font-family: "UnitedSans";
+  src: url("UnitedSansSmExBd.woff2") format("woff2"),
+       url("UnitedSansSmExBd.woff") format("woff");
+}  
+
+
 html, body {
   padding: 0;
   margin: 0;
@@ -9,23 +16,17 @@ html, body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background: url("Background.png");
+  background: url("Background2.png");
   color: #FFECD1;
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'UnitedSans', sans-serif;
 }
 
 h1, h2, h3, a, p, input, label, textarea {
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'UnitedSans', sans-serif;
 }
 
-@font-face {
-  font-family: "UnitedSans";
-  src: url("UnitedSansSmExBd.woff2") format("woff2"),
-       url("UnitedSansSmExBd.woff") format("woff");
-}  
-
 .united, .heroDetails {
-  font-family: 'UnitedSans', sans-serif;
+  font-family: 'Work Sans', sans-serif;
 }
 
 input, textarea {
@@ -384,7 +385,7 @@ footer > div > div{
 .outline {
   -webkit-text-stroke: .8px;
   -webkit-text-fill-color: #1F1F1F;
-  font-family: 'UnitedSans', sans-serif;
+  font-family: 'Work Sans', sans-serif;
 }
 
 .topnav > a {
@@ -617,11 +618,12 @@ footer > div > div{
   }
 
   .topnav.responsive {
-    position: relative;
     flex-direction: column;
     margin: 0;
     background: #FFECD1;
     align-items: center;
+    height: 100%;
+    position: fixed;
   }
 
   .topnav .icon {
@@ -660,6 +662,13 @@ footer > div > div{
 
   .dropdown:hover .centered {
     display: block;
+    margin: 0;
+    font-size: 1em;
+    bottom: 14%;
+  }
+
+    .topnav.responsive .instaDiv {
+    display: none;
   }
 
   .topnav.responsive .dropdown .dropbtn {
@@ -671,7 +680,7 @@ footer > div > div{
   }
 
   .dropdown .dropbtn {
-    padding-left: 0;
+    padding: 0;
   }
 
   .topnav.responsive .dropdown {
