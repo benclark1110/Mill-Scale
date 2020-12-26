@@ -647,13 +647,18 @@ footer > div > div{
     float: none;
     display: block;
     text-align: center;
-    width: 35%;
     color: #B39457;
+    flex: 0;
+    position: relative;
   }
 
   .topnav.responsive .dropdown {
     float: none;
     padding-top: 30%;
+    flex: 0;
+    flex-grow: 0;
+    postition: relative;
+    min-height: 1%;
   }
 
   .topnav.responsive .centered {
@@ -667,7 +672,7 @@ footer > div > div{
     bottom: 14%;
   }
 
-    .topnav.responsive .instaDiv {
+  .topnav.responsive .instaDiv {
     display: none;
   }
 
@@ -685,6 +690,10 @@ footer > div > div{
 
   .topnav.responsive .dropdown {
     display: block;
+  }
+
+  .topnav.responsive .dropdown:hover {
+    padding-bottom: 35%;
   }
 
   .topnav.responsive .dropdown-content{
