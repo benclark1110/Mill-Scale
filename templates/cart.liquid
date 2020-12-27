@@ -15,7 +15,9 @@
               <div class="row">
                 <p class="column">{{ item.product.title }}</p>
                 <p class="column">{{ item.variant.title }}</p>
-                <p class="column">{{ item.price | money }}</p>
+                <p class="column"><span class="hulkapps-cart-item-price" data-key="{{item.key}}">
+                                        {{ item.price | money }}
+                              </span></p>
               </div>
               <div class="row">
                 <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">REMOVE</a>
@@ -26,8 +28,12 @@
         {% endfor %}
         <hr class="cartBreak">
         <p>Taxes + shipping calculated at checkout</p>
-        <p class="subtotal">Subtotal<span class="dot"></span>{{ cart.total_price | money }}</p>
-        <button id="CartCheckout" class="united"type="submit" name="checkout">Check Out - {{ cart.total_price | money }}</button>
+        <p class="subtotal">Subtotal<span class="dot"></span><span class="hulkapps-cart-original-total" data-key="{{item.key}}">
+                                      {{ cart.total_price | money }}
+                                </span></p>
+        <button id="CartCheckout" class="united"type="submit" name="checkout">Check Out - <span class="hulkapps-cart-original-total" data-key="{{item.key}}">
+                                      {{ cart.total_price | money }}
+                                </span></button>
       </form>
     </div>
 {% else %}
