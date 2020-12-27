@@ -137,7 +137,8 @@
     {% endif %}
   </main>
 
-{% unless template contains 'product' OR emplate contains 'contact' %}
+{% unless template contains 'product' %}
+{% unless template contains 'contact' %}
   <footer class="footer">
     <div>
       <a href="https://mill-scale.myshopify.com/">
@@ -177,6 +178,7 @@
       </div>
     </div>
   </footer>
+{% endunless %}
 {% endunless %}
 
 <script src="https://player.vimeo.com/api/player.js"></script>
