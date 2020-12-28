@@ -63,7 +63,12 @@
       <br>
       <br>
       <div class="customOptions" id="hulkapps_custom_options_{{ product.id }}"> </div>
-      <button type="submit" name="add" id="AddToCart">Add to cart</button>
+      {% unless product.available %}
+        <option disabled="disabled">SOLD OUT</option>
+      {% else %}
+        <button type="submit" name="add" id="AddToCart">Add to cart</button>
+      {% endunless %}
+      
     </form>
   </div>
 </div>
