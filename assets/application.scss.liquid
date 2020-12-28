@@ -329,6 +329,7 @@ footer > div > div{
 .productDetailImages {
   width: 100%;
   height: auto;
+  padding-right: 5%;
 }
 
 .productDetailRow {
@@ -349,8 +350,10 @@ footer > div > div{
 }
 
 .overflow {
-  height:100%;
-  overflow: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 #ProductPrice {
