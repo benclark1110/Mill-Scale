@@ -2,10 +2,21 @@
   {% assign current_variant = product.selected_or_first_available_variant %}
   {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
   <div class='columnItem overflow'>
-    {% for image in product.images %}
-    <img class="productDetailImages" src="{{ image.src | product_img_url: 'original' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
-    {% endfor %}
+      {% for image in product.images %}
+      <img class="productDetailImages" src="{{ image.src | product_img_url: 'original' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
+      {% endfor %}
   </div>
+  {% comment %} <div class='columnItem slideshow-container'>
+    <div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    {% for image in product.images %}
+      <div class="mySlides fade">
+        <img class="productDetailImages" src="{{ image.src | product_img_url: 'original' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
+      </div>
+    {% endfor %}
+    </div>
+  </div> {% endcomment %}
   <div class='columnItem productColumn' style="overflow: scroll; height: 70%;">
     <div style="overflow: scroll;">
       <h3 class="united">{{ collection.title }}</h3>
@@ -17,12 +28,12 @@
       <hr class="hrColor">
       <p>{{ product.description | split: '~section2~' | first }}</p>
       <br>
-      <div>
+      {% comment %} <div>
         <h3 class="accordion">+ Outside the US?</h3>
         <div class="panel">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
-      </div>
+      </div> {% endcomment %}
       <hr class="hrColor">
       <div>
         <h3 class="accordion">+ Product Specs</h3>
@@ -108,3 +119,44 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 </script>
+{% comment %} 
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script> {% endcomment %}
+
+{% comment %} <script>
+function testFuncPlus() {
+  document.getElementById('test1').scrollRight -= 20;
+  console.log("clickedRight");
+}
+
+function testFuncMinus() {
+  document.getElementById('test1').scrollLeft += 20;
+  console.log("clickedLeft");
+}
+</script> {% endcomment %}
