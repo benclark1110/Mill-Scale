@@ -21,7 +21,7 @@ html, body {
   font-family: 'Work Sans', sans-serif;
 }
 
-h1, h2, h3, a, p, input, label, textarea {
+h1, h2, h3, a, p, input, label, textarea, form, option, select {
   font-family: 'Work Sans', sans-serif;
 }
 
@@ -327,8 +327,8 @@ footer > div > div{
 }
 
 .productDetailImages {
-  width: 100%;
-  height: auto;
+  {% comment %} width: 100%; {% endcomment %}
+  height: 78vh;
   padding-right: 5%;
 }
 
@@ -873,6 +873,10 @@ footer > div > div{
   .productImages {
     width: 100%;
     height: auto;
+  }
+
+  .productDetailImages {
+    height: 40vh;
   }
 }
 

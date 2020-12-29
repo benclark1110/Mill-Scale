@@ -3,7 +3,7 @@
   {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
   <div class='columnItem overflow'>
     {% for image in product.images %}
-    <img class="productDetailImages" src="{{ image.src | product_img_url: 'large' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
+    <img class="productDetailImages" src="{{ image.src | product_img_url: 'original' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
     {% endfor %}
   </div>
   <div class='columnItem productColumn' style="overflow: scroll; height: 70%;">
