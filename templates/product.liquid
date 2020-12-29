@@ -6,68 +6,70 @@
     <img class="productDetailImages" src="{{ image.src | product_img_url: 'large' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
     {% endfor %}
   </div>
-  <div class='columnItem productColumn'>
-    <h3 class="united">{{ collection.title }}</h3>
-      <h1 class="outline productPage united">{{ product.title }}</h1>
-    <div>
-      <h3 class="productPricing united">PRICE</h3>
-      <h3 id="ProductPrice" class="productPricing"> {{ current_variant.price | money }}</h3>
-    </div>
-    <hr class="hrColor">
-    <p>{{ product.description | split: '~section2~' | first }}</p>
-    <br>
-    <div>
-      <h3 class="accordion">+ Outside the US?</h3>
-      <div class="panel">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <div class='columnItem productColumn' style="overflow: scroll; height: 70%;">
+    <div style="overflow: scroll;">
+      <h3 class="united">{{ collection.title }}</h3>
+        <h1 class="outline productPage united">{{ product.title }}</h1>
+      <div>
+        <h3 class="productPricing united">PRICE</h3>
+        <h3 id="ProductPrice" class="productPricing"> {{ current_variant.price | money }}</h3>
       </div>
-    </div>
-    <hr class="hrColor">
-    <div>
-      <h3 class="accordion">+ Product Specs</h3>
-      <div class="panel">
-        <p>{{ product.description | split: '~section2~' | last }}</p>
+      <hr class="hrColor">
+      <p>{{ product.description | split: '~section2~' | first }}</p>
+      <br>
+      <div>
+        <h3 class="accordion">+ Outside the US?</h3>
+        <div class="panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
       </div>
+      <hr class="hrColor">
+      <div>
+        <h3 class="accordion">+ Product Specs</h3>
+        <div class="panel">
+          <p>{{ product.description | split: '~section2~' | last }}</p>
+        </div>
+      </div>
+      <hr class="hrColor">
+      <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" style="overflow: auto; height: 70%">
+        {% if product.variants.size >= 2 %}
+          <select style="width:100%" name="id" id="ProductSelect-{{ section.id }}" class="product-single__variants productVariants">
+            {% for variant in product.variants %}
+              {% if variant.available %}
+                <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+                
+              {% else %}
+                <option disabled="disabled">
+                  {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                </option>
+              {% endif %}
+            {% endfor %}
+          </select>
+        {% else %}
+        <select style="width:100%" name="id" id="ProductSelect-{{ section.id }}" class="product-single__variants hideVariant">
+            {% for variant in product.variants %}
+              {% if variant.available %}
+                <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+              {% else %}
+                <option disabled="disabled">
+                  {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                </option>
+              {% endif %}
+            {% endfor %}
+          </select>
+        {% endif %}
+        {% comment %} {{ current_variant.price | money }} {% endcomment %}
+        {% comment %} <label for="Quantity">quantity</label> {% endcomment %}
+        {% comment %} <input type="number" id="Quantity" name="quantity" value="1" min="1"> {% endcomment %}
+        <div class="customOptions" id="hulkapps_custom_options_{{ product.id }}"> </div>
+        {% unless product.available %}
+          <option disabled="disabled">SOLD OUT</option>
+        {% else %}
+          <button style="width: 100%"type="submit" name="add" id="AddToCart">Add to cart</button>
+        {% endunless %}
+        
+      </form>
     </div>
-    <hr class="hrColor">
-    <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
-      {% if product.variants.size >= 2 %}
-        <select style="width:100%" name="id" id="ProductSelect-{{ section.id }}" class="product-single__variants productVariants">
-          {% for variant in product.variants %}
-            {% if variant.available %}
-              <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
-              
-            {% else %}
-              <option disabled="disabled">
-                {{ variant.title }} - {{ 'products.product.sold_out' | t }}
-              </option>
-            {% endif %}
-          {% endfor %}
-        </select>
-      {% else %}
-      <select style="width:100%" name="id" id="ProductSelect-{{ section.id }}" class="product-single__variants hideVariant">
-          {% for variant in product.variants %}
-            {% if variant.available %}
-              <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
-            {% else %}
-              <option disabled="disabled">
-                {{ variant.title }} - {{ 'products.product.sold_out' | t }}
-              </option>
-            {% endif %}
-          {% endfor %}
-        </select>
-      {% endif %}
-      {% comment %} {{ current_variant.price | money }} {% endcomment %}
-      {% comment %} <label for="Quantity">quantity</label> {% endcomment %}
-      {% comment %} <input type="number" id="Quantity" name="quantity" value="1" min="1"> {% endcomment %}
-      <div class="customOptions" id="hulkapps_custom_options_{{ product.id }}"> </div>
-      {% unless product.available %}
-        <option disabled="disabled">SOLD OUT</option>
-      {% else %}
-        <button type="submit" name="add" id="AddToCart">Add to cart</button>
-      {% endunless %}
-      
-    </form>
   </div>
 </div>
 
