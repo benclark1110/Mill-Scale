@@ -328,7 +328,7 @@ footer > div > div{
 
 .productDetailImages {
   {% comment %} width: 100%; {% endcomment %}
-  height: 78vh;
+  height: 100%;
   padding-right: 5%;
 }
 
@@ -353,7 +353,23 @@ footer > div > div{
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  height: 84%;
+}
+
+.overflow::-webkit-scrollbar {
+  height: 10px;
+}
+
+{% comment %} .overflow::-webkit-scrollbar-track {
+  background: #1f1f1f; 
+} {% endcomment %}
+ 
+.overflow::-webkit-scrollbar-thumb {
+  background: #B39457; 
+}
+
+.overflow::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
 
 #ProductPrice {
@@ -848,6 +864,7 @@ footer > div > div{
 
   .productDetailRow {
     position: relative;
+    height: auto;
   }
 
   .productColumn {
@@ -882,7 +899,7 @@ footer > div > div{
 
 @media (min-width: 1100px) {
   main {
-    margin-top: 200px;
+    margin-top: 140px;
   }
 }
 
