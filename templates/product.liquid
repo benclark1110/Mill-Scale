@@ -76,7 +76,11 @@
         {% unless product.available %}
           <option disabled="disabled">SOLD OUT</option>
         {% else %}
-          <button style="width: 100%"type="submit" name="add" id="AddToCart">Add to cart</button>
+          {% if product.title == "Offset Smoker"%}
+            <button class="heroDetails" style="width: 100%;"><a style="color: #B39457;"href="https://mill-scale.myshopify.com/pages/contact">Click to contact</a></button>
+          {% else %}
+            <button style="width: 100%"id="AddToCart">Add to cart</button>
+          {% endif %}
         {% endunless %}
         
       </form>
