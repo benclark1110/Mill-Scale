@@ -23,7 +23,7 @@
         <h1 class="outline productPage united">{{ product.title }}</h1>
       <div>
         <h3 class="productPricing united">PRICE</h3>
-        {% if product.title == "Custom Offset Smokers"%}
+        {% if product.title == "Custom Offset Smokers" or product.title == "Open-Fire Grills"%}
         <h3 id="ProductPrice" class="productPricing">Contact for details</h3>
         {% else %}
         <h3 id="ProductPrice" class="productPricing"> {{ current_variant.price | money }}</h3>
@@ -38,18 +38,14 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
       </div> {% endcomment %}
-      {% if product.type == "Cookers"%}
-      {% unless product.title == "Custom Offset Smokers"%}
-        <hr class="hrColor">
-        <div>
-          <h3 class="accordion">+ Product Specs</h3>
-          <div class="panel">
-            <p>{{ product.description | split: '~section2~' | last }}</p>
-          </div>
+      <hr class="hrColor">
+      <div>
+        <h3 class="accordion">+ Product Specs</h3>
+        <div class="panel">
+          <p>{{ product.description | split: '~section2~' | last }}</p>
         </div>
-      {% endunless %}
-      {% endif %}
-      {% if product.title == "Custom Offset Smokers"%}
+      </div>
+      {% if product.title == "Custom Offset Smokers" or product.title == "Open-Fire Grills"%}
         <a href="https://mill-scale.myshopify.com/pages/contact" class="homeFonts"><button style="width: 100%"  class=" united transitionbutton fill">Click to contact</button></a>
       {% else %}
         <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" style="overflow: auto; height: 70%; padding-top: 2%; padding-bototm: 3%;">
