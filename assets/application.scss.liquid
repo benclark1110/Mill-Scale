@@ -176,11 +176,6 @@ footer > div > div{
 .selected {
   color: #FFECD1;
 }
- 
-.popular{
-  display: flex;
-  flex-wrap: wrap;
-}
 
 .popular > div {
   flex: 1;
@@ -209,7 +204,7 @@ footer > div > div{
 
 {% comment %} -------------- PRODUCTS PAGE -------------- {% endcomment %}
 
-.collection{
+.collection, .popular{
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: auto;
@@ -887,6 +882,10 @@ footer > div > div{
   .collection{
     grid-template-columns: 33% 33% 33%;
   }
+
+  .popular {
+    grid-template-columns: 50% 50%;
+  }
 }
 
 @media (max-width: 1092px) {
@@ -901,7 +900,7 @@ footer > div > div{
 }
 
 @media screen and (max-width: 720px) {
-  .collection{
+  .collection, .popular{
     grid-template-columns: 100%;
   }
 }
