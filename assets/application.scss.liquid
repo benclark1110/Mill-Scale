@@ -157,6 +157,7 @@ footer > div > div{
 .collectionsHeader {
   margin: 0 3% 3% 3%;
   padding-bottom: 1%;
+  padding-top: 4%;
   border-bottom-style: solid;
   border-width: thin;
   color: #B39457;
@@ -170,17 +171,10 @@ footer > div > div{
   color: #B39457;
   width: -webkit-fill-available;
   margin-right: -.4%;
-  {% comment %} margin-right: -.3%; {% endcomment %}
-  {% comment %} margin: 0; {% endcomment %}
 }
 
 .selected {
   color: #FFECD1;
-}
-
-.collection{
-  display: flex;
-  flex-wrap: wrap;
 }
  
 .popular{
@@ -213,22 +207,12 @@ footer > div > div{
   padding: 5%
 }
 
-{% comment %} .vimeoVideo {
-  width: 80%;
-  height: auto;
-  float: right;
-} {% endcomment %}
-
 {% comment %} -------------- PRODUCTS PAGE -------------- {% endcomment %}
 
 .collection{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.collection > div {
-  flex: 0;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: auto;
 }
 
 .collection > div > div{
@@ -327,7 +311,6 @@ footer > div > div{
 }
 
 .productDetailImages {
-  {% comment %} width: 100%; {% endcomment %}
   height: 100%;
   padding-right: 5%;
 }
@@ -359,10 +342,6 @@ footer > div > div{
 .overflow::-webkit-scrollbar {
   height: 10px;
 }
-
-{% comment %} .overflow::-webkit-scrollbar-track {
-  background: #1f1f1f; 
-} {% endcomment %}
  
 .overflow::-webkit-scrollbar-thumb {
   background: #B39457; 
@@ -553,6 +532,7 @@ footer > div > div{
   font-family: inherit;
   margin: 0;
   padding-top: 0;
+  padding-bottom: 25%;
 }
 
 .dropdown-content {
@@ -577,11 +557,9 @@ footer > div > div{
 
 .topnav a:hover:not(.navHover), .dropdown:hover .dropbtn {
   border-bottom-style: solid;
-  {% comment %} color: white; {% endcomment %}
 }
 
 .dropdown-content a:hover {
-  {% comment %} background-color: #ddd; {% endcomment %}
   color: #B39457;
   border: none;
   justify-content: space-between;
@@ -592,14 +570,8 @@ footer > div > div{
   width: -webkit-fill-available;
   display: flex;
   justify-content: space-around;
-  top: 70%;
+  top: 60%;
 }
-
-{% comment %} .dropdown:hover .topnav {
-  margin-top: 0;
-  padding-top: 3%;
-  background-color: #FFECD1;
-} {% endcomment %}
 
 .dropdownImage {
   position: relative;
@@ -632,8 +604,14 @@ footer > div > div{
 }
 
 @media screen and (max-width: 600px) {
+  .active {
+    padding-top: 6% !important;
+  }
+
   .topnav {
-    width: 100%
+    width: 100%;
+    margin: 0 !important;
+    align-items: center !important;
   }
   
   .topnav a:not(.active), .dropdown .dropbtn, .headerImage {
@@ -666,13 +644,15 @@ footer > div > div{
     position: absolute;
     right: 0;
     top: 0;
+    margin-top: 12%;
+    margin-right: 16%;
   }
 
   .topnav.responsive .active {
     order: -1;
     position: absolute;
     left: 0;
-    top: 2%;
+    margin-left: 3%
   }
 
   .topnav.responsive a {
@@ -850,11 +830,6 @@ footer > div > div{
       display: none;
   }
 
-  .topnav.responsive .active img {
-    width: auto;
-    height: 100%
-  }
-
   .vimeoVideo {
     width: 100% !important;
     height: auto !important;
@@ -903,17 +878,31 @@ footer > div > div{
   }
 }
 
-@media (max-width: 1440) {
+@media (max-width: 1440px) {
   .productImages {
     width: 480px;
     height:480px;
   }
+
+  .collection{
+    grid-template-columns: 33% 33% 33%;
+  }
 }
 
-@media (max-width: 810) {
+@media (max-width: 1092px) {
   .productImages {
     width: 100%;
     height: auto;
+  }
+
+  .collection{
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .collection{
+    grid-template-columns: 100%;
   }
 }
 
@@ -925,10 +914,6 @@ footer > div > div{
   outline: none;
   transition: 0.9s;
 }
-
-{% comment %} .active, .accordion:hover {
-  background-color: #ccc; 
-} {% endcomment %}
 
 .panel {
   display: none;
