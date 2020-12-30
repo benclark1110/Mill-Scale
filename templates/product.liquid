@@ -18,7 +18,7 @@
     </div>
   </div> {% endcomment %}
   <div class='columnItem productColumn' style="overflow: scroll; height: 80%;">
-    <div style="overflow: scroll;">
+    <div>
       <h3 class="united">{{ collection.title }}</h3>
         <h1 class="outline productPage united">{{ product.title }}</h1>
       <div>
@@ -49,49 +49,51 @@
         </div>
       {% endunless %}
       {% endif %}
-      <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" style="overflow: auto; height: 70%">
-        {% if product.variants.size >= 2 %}
-          <select style="width:100%" name="id" id="ProductSelect-{{ section.id }}" class="product-single__variants productVariants">
-            {% for variant in product.variants %}
-              {% if variant.available %}
-                <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
-                
-              {% else %}
-                <option disabled="disabled">
-                  {{ variant.title }} - {{ 'products.product.sold_out' | t }}
-                </option>
-              {% endif %}
-            {% endfor %}
-          </select>
-        {% else %}
-        <select style="width:100%" name="id" id="ProductSelect-{{ section.id }}" class="product-single__variants hideVariant">
-            {% for variant in product.variants %}
-              {% if variant.available %}
-                <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
-              {% else %}
-                <option disabled="disabled">
-                  {{ variant.title }} - {{ 'products.product.sold_out' | t }}
-                </option>
-              {% endif %}
-            {% endfor %}
-          </select>
-        {% endif %}
-        {% comment %} {{ current_variant.price | money }} {% endcomment %}
-        {% comment %} <label for="Quantity">quantity</label> {% endcomment %}
-        {% comment %} <input type="number" id="Quantity" name="quantity" value="1" min="1"> {% endcomment %}
-        <div class="customOptions" id="hulkapps_custom_options_{{ product.id }}"> </div>
-        {% unless product.available %}
-          <option disabled="disabled">SOLD OUT</option>
-        {% else %}
-          {% if product.title == "Custom Offset Smokers"%}
-            <button class="heroDetails" style="width: 100%;"><a style="color: #B39457;"href="https://mill-scale.myshopify.com/pages/contact">Click to contact</a></button>
+      {% if product.title == "Custom Offset Smokers"%}
+        <a href="https://mill-scale.myshopify.com/pages/contact" class="homeFonts"><button style="width: 100%"  class=" united transitionbutton fill">Click to contact</button></a>
+      {% else %}
+        <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" style="overflow: auto; height: 70%; padding-top: 2%; padding-bototm: 3%;">
+          {% if product.variants.size >= 2 %}
+            <select style="width:100%" name="id" id="ProductSelect-{{ section.id }}" class="product-single__variants productVariants">
+              {% for variant in product.variants %}
+                {% if variant.available %}
+                  <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+                  
+                {% else %}
+                  <option disabled="disabled">
+                    {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+            </select>
           {% else %}
-            <button style="width: 100%" class="transitionbutton fill">Add to cart</button>
-            {% comment %} id="AddToCart" {% endcomment %}
+          <select style="width:100%" name="id" id="ProductSelect-{{ section.id }}" class="product-single__variants hideVariant">
+              {% for variant in product.variants %}
+                {% if variant.available %}
+                  <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+                {% else %}
+                  <option disabled="disabled">
+                    {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+            </select>
           {% endif %}
-        {% endunless %}
-        
-      </form>
+          {% comment %} {{ current_variant.price | money }} {% endcomment %}
+          {% comment %} <label for="Quantity">quantity</label> {% endcomment %}
+          {% comment %} <input type="number" id="Quantity" name="quantity" value="1" min="1"> {% endcomment %}
+          <div class="customOptions" id="hulkapps_custom_options_{{ product.id }}"> </div>
+          {% unless product.available %}
+            <option disabled="disabled">SOLD OUT</option>
+          {% else %}
+            
+              {% comment %} <button class="heroDetails" style="width: 100%;"><a style="color: #B39457;"href="https://mill-scale.myshopify.com/pages/contact">Click to contact</a></button> {% endcomment %}
+              
+              <button style="width: 100%" class="transitionbutton fill">Add to cart</button>
+              {% comment %} id="AddToCart" {% endcomment %}
+          {% endunless %}
+        </form>
+      {% endif %}
     </div>
   </div>
 </div>
