@@ -3,7 +3,6 @@
 <html>
 
 <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js " ></script>
   <title>{{ page_title }}</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -16,7 +15,6 @@
   {{ content_for_header }} <!-- Header hook for plugins -->
   {{ 'application.scss.css' | asset_url | stylesheet_tag }}
   {{ 'application.js' | asset_url | script_tag }}
-  {% include 'hulkcode_common' %}{% if template contains 'product' or template contains 'cart' %}<script src='https://productoption.hulkapps.com/api/v2/frontend/hulkcode.js' defer='defer'></script>{% endif %}
 </head>
 
 <body onload = "startTimer()">
@@ -53,7 +51,7 @@
 
 
 
-  {% if shop.customer_accounts_enabled %}
+  {% comment %} {% if shop.customer_accounts_enabled %}
     {% if customer %}
       <a href="/account">account</a>
       {{ 'log out'  | customer_logout_link }}
@@ -61,7 +59,7 @@
       {{ 'log in ' | customer_login_link }}
       {{ 'register' | customer_register_link }}
     {% endif %}
-  {% endif %}
+  {% endif %} {% endcomment %}
 
   <main role="main">
     {{ content_for_layout }}
@@ -193,6 +191,8 @@ function myFunction() {
   }
 }
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js " ></script>
+{% include 'hulkcode_common' %}{% if template contains 'product' or template contains 'cart' %}<script src='https://productoption.hulkapps.com/api/v2/frontend/hulkcode.js' defer='defer'></script>{% endif %}
 </body>
 
 </html>
