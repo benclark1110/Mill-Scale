@@ -14,7 +14,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   {{ content_for_header }} <!-- Header hook for plugins -->
   {{ 'application.scss.css' | asset_url | stylesheet_tag }}
-  {{ 'application.js' | asset_url | script_tag }}
+  {% if template == 'index' %}{{ 'application.js' | asset_url | script_tag }}{% endif %}
+  <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
 </head>
 
 <body onload = "startTimer()">
@@ -29,7 +30,7 @@
           {% unless collection.title == 'Popular Items' %}
             <div class="dropdownImage">
               <a style="height: 10%" href="{{ collection.url }}"><h2 class="centered united">{{ collection.title | escape }}</h2></a>
-              <a class="hide" href="{{ collection.url }}"><img class="headerImage" src="{{ collection.image.src | img_url: 'original' }}" alt="{{ collection.image.alt | escape }}"></a>
+              <a class="hide" href="{{ collection.url }}"><img class="lazyload headerImage" data-src="{{ collection.image.src | img_url: 'original' }}" alt="{{ collection.image.alt | escape }}"></a>
             </div>
           {% endunless %}
         {% endfor %}
@@ -108,7 +109,7 @@
             <div> 
               <div>
                 <a href="{{ product.url | within: collection }}">
-                    <img style="width: 360px; height: 360px;" src="{{ product.featured_image.src | img_url: 'original' }}" alt="{{ product.featured_image.alt | escape }}">
+                    <img class="lazyload" style="width: 360px; height: 360px;" data-src="{{ product.featured_image.src | img_url: 'original' }}" alt="{{ product.featured_image.alt | escape }}">
                 </a>
               </div>
               <div>
@@ -125,7 +126,7 @@
     </div>
     <div class="smokerLogo rowItem">
       <div class="columnItem smokerIcon">
-        <img src="//cdn.shopify.com/s/files/1/0467/0049/5015/t/5/assets/Smoker.svg?v=15562615337445288316" width="100%" height="100%">
+        <img class="lazyload" data-src="//cdn.shopify.com/s/files/1/0467/0049/5015/t/5/assets/Smoker.svg?v=15562615337445288316" width="100%" height="100%">
       </div>
       <div class="columnItem smokerTextBox">
         <p style="font-size:2vw; margin:0; padding: 2% 2% 6% 2%;" class="united smokerText">Whether you need a smoker on skids to put in a pit room, or one that can be taken on the road to cook anywhere, we’ve got you covered</p>
@@ -141,7 +142,7 @@
   <footer class="footer">
     <div>
       <a href="https://mill-scale.myshopify.com/">
-        <img src="//cdn.shopify.com/s/files/1/0467/0049/5015/t/5/assets/Footer_Icon.svg?v=18218190162933745886" width="70%" height="70%">
+        <img class="lazyload" data-src="//cdn.shopify.com/s/files/1/0467/0049/5015/t/5/assets/Footer_Icon.svg?v=18218190162933745886" width="70%" height="70%">
       </a>
     </div>
     <div class="questions">

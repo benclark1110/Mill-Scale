@@ -19,7 +19,7 @@
         {% comment %} {{ product.price | money }} {% endcomment %}
         {% comment %} {% unless product.available %}<br><strong>sold out</strong>{% endunless %} {% endcomment %}
         <a href="{{ product.url | within: collection }}">
-          <img style="width: 360px; height: 360px;"class="productImages" src="{{ product.featured_image.src | img_url: 'original' }}" alt="{{ product.featured_image.alt | escape }}">
+          <img style="width: 360px; height: 360px;"class="lazyload productImages" data-src="{{ product.featured_image.src | img_url: 'original' }}" alt="{{ product.featured_image.alt | escape }}">
         </a>
       </div>
       <div class="productBorder">

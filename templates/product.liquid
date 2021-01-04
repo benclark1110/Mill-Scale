@@ -3,7 +3,7 @@
   {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
   <div class='columnItem overflow' style="padding-bottom: 0; padding-left: 0">
       {% for image in product.images %}
-      <img class="productDetailImages" src="{{ image.src | product_img_url: 'original' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
+      <img class="lazyload productDetailImages" data-src="{{ image.src | product_img_url: 'original' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
       {% endfor %}
   </div>
   {% comment %} <div class='columnItem slideshow-container'>
@@ -51,15 +51,15 @@
         <h3 class="accordion">+ Technical Diagrams</h3>
         <div class="panel">
           {% if product.title  == 'Yakitori' %}
-            <img src="https://cdn.shopify.com/s/files/1/0467/0049/5015/files/YAKITORI_TECHNICAL_DRAWING.png?v=1609794919" width="100%" height="100%">
+            <img class="lazyload" data-src="https://cdn.shopify.com/s/files/1/0467/0049/5015/files/YAKITORI_TECHNICAL_DRAWING.png?v=1609794919" width="100%" height="100%">
           {% elsif product.title  == 'Open-Fire Grills' %}
-            <img src="https://cdn.shopify.com/s/files/1/0467/0049/5015/files/OPEN_FIRE_GRILL_TECHNICAL_DRAWING.png?v=1609794919" width="100%" height="100%">
+            <img class="lazyload" data-src="https://cdn.shopify.com/s/files/1/0467/0049/5015/files/OPEN_FIRE_GRILL_TECHNICAL_DRAWING.png?v=1609794919" width="100%" height="100%">
           {% elsif product.title  == 'Presidio Fire Pit' %}
-            <img src="https://cdn.shopify.com/s/files/1/0467/0049/5015/files/PRESIDIO_TECHNICAL_DRAWING.png?v=1609794919" width="100%" height="100%">
+            <img class="lazyload" data-src="https://cdn.shopify.com/s/files/1/0467/0049/5015/files/PRESIDIO_TECHNICAL_DRAWING.png?v=1609794919" width="100%" height="100%">
           {% elsif product.title  == '94 Gallon Smoker' %}
-            <img src="https://cdn.shopify.com/s/files/1/0467/0049/5015/files/94_GALLON_SMOKER_TECHNICAL_DRAWING.png?v=1609794919" width="100%" height="100%">
+            <img class="lazyload" data-src="https://cdn.shopify.com/s/files/1/0467/0049/5015/files/94_GALLON_SMOKER_TECHNICAL_DRAWING.png?v=1609794919" width="100%" height="100%">
           {% elsif product.title  == 'Asado Fire Pit' %}
-            <img src="https://cdn.shopify.com/s/files/1/0467/0049/5015/files/ASADO_TECHNICAL_DRAWING.png?v=1609794919" width="100%" height="100%">
+            <img class="lazyload" data-src="https://cdn.shopify.com/s/files/1/0467/0049/5015/files/ASADO_TECHNICAL_DRAWING.png?v=1609794919" width="100%" height="100%">
           {% endif %}
         </div>
       </div>

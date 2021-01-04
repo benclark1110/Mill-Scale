@@ -9,7 +9,7 @@
         {% for item in cart.items %}
           <div class="row productRow">
             <a class="column" href="{{ item.url | within: collections.all }}">
-              <img class="cartImage"src="{{ item | img_url: 'original' }}" alt="{{ item.title | escape }}">
+              <img class="lazyload cartImage" data-src="{{ item | img_url: 'original' }}" alt="{{ item.title | escape }}">
             </a>
             <div class="column">
               <div class="row">
