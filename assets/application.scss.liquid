@@ -426,7 +426,7 @@ footer > div > div{
 {% comment %} -------------- CONTACT PAGE -------------- {% endcomment %}
 
 .contactPage{
-  align-items: flex-start;
+  justify-content: center;
 }
 
 .contactInfo {
@@ -444,7 +444,8 @@ footer > div > div{
 
 .contactForm {
   line-height: 150%;
-  padding-bottom: 1.1%
+  padding-bottom: 1.1%;
+  flex: .7;
 }
 
 .contactForm, .cartColumn, .productColumn {
@@ -469,11 +470,11 @@ footer > div > div{
 }
 
 #ContactFormFirstName, #ContactFormLastName {
-  width: 48%;
+  width: 49%;
 }
 
 #ContactFormEmail, #ContactFormSubject {
-  width: 98%;
+  width: 99.5%;
 }
 
 ::placeholder {
@@ -501,6 +502,7 @@ footer > div > div{
   border-color: #B39457;
   color: #B39457;
   padding: 2% 10% 2% 10%;
+  width: 100%;
 }
 
 .heroImageButton {
@@ -870,6 +872,10 @@ footer > div > div{
   .productColumn, .outStory, .givingBackColumn, .contactText {
     font-size:3.5vw;
     line-height: 150%;
+  }
+
+  .contactForm {
+    flex: 1;
   }
 }
 
