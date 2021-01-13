@@ -43,7 +43,7 @@ text[2] = "KEEP THE FIRES BURNING";
 
 var paragraph = [], z = -1;
 paragraph[0] = "We are now offering carbon steel fire and grill tools in collaboration with Iron Grove Tool Company. Each item is hand-forged in Dripping Springs, Texas.";
-paragraph[1] = "Matt and Caleb Johnson have been working together their entire lives. Their requires discipline, adaptability, and time. And at the end of the day, you’ve just got to have the heat right.";
+paragraph[1] = "In a fast paced world, we provide the opposite: food cooked slowly, with a piece of equipment that could take a lifetime to master.";
 paragraph[2] = "We build 500 and 1000 gallon offset smokers for competition, commercial, and residential use. Each one is built to suit the pitmaster’s needs. Ready to take your barbecue to the next level?";
 
 var link = [], a = -1;
