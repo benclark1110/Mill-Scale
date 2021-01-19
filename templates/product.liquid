@@ -40,32 +40,34 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
       </div> {% endcomment %}
-      <hr class="hrColor">
-      <div>
-        <h3 class="accordion">+ Product Specs</h3>
-        <div class="panel">
-          <p>{{ product.description | split: '~section2~' | last }}</p>
+      {% unless product.title == "Custom Offset Smokers"%}
+        <hr class="hrColor">
+        <div>
+          <h3 class="accordion">+ Product Specs</h3>
+          <div class="panel">
+            <p>{{ product.description | split: '~section2~' | last }}</p>
+          </div>
         </div>
-      </div>
-      {% if collection.title == "Cookers" %}
-      <hr class="hrColor">
-      <div>
-        <h3 class="accordion">+ Technical Diagrams</h3>
-        <div class="panel">
-          {% if product.title  == 'Yakitori' %}
-            <img class="lazyload" data-src="https://cdn.shopify.com/s/files/1/0467/0049/5015/files/YAKITORI_TECHNICAL_DRAWING.png?v=1609794919" width="100%" height="100%">
-          {% elsif product.title  == 'Open-Fire Grills' %}
-            <img class="lazyload" data-src="https://cdn.shopify.com/s/files/1/0467/0049/5015/files/OPEN_FIRE_GRILL_TECHNICAL_DRAWING.png?v=1609794919" width="100%" height="100%">
-          {% elsif product.title  == 'Presidio Fire Pit' %}
-            <img class="lazyload" data-src="https://cdn.shopify.com/s/files/1/0467/0049/5015/files/PRESIDIO_TECHNICAL_DRAWING.png?v=1609794919" width="100%" height="100%">
-          {% elsif product.title  == '94 Gallon Smoker' %}
-            <img class="lazyload" data-src="https://cdn.shopify.com/s/files/1/0467/0049/5015/files/94_GALLON_SMOKER_TECHNICAL_DRAWING.png?v=1609794919" width="100%" height="100%">
-          {% elsif product.title  == 'Asado Fire Pit' %}
-            <img class="lazyload" data-src="https://cdn.shopify.com/s/files/1/0467/0049/5015/files/ASADO_TECHNICAL_DRAWING.png?v=1609794919" width="100%" height="100%">
-          {% endif %}
-        </div>
-      </div>
-      {% endif %}
+        {% if collection.title == "Cookers" %}
+          <hr class="hrColor">
+          <div>
+            <h3 class="accordion">+ Technical Diagrams</h3>
+            <div class="panel">
+              {% if product.title  == 'Yakitori' %}
+                <img class="lazyload" data-src="https://cdn.shopify.com/s/files/1/0467/0049/5015/files/YAKITORI_TECHNICAL_DRAWING.png?v=1609794919" width="100%" height="100%">
+              {% elsif product.title  == 'Open-Fire Grills' %}
+                <img class="lazyload" data-src="https://cdn.shopify.com/s/files/1/0467/0049/5015/files/OPEN_FIRE_GRILL_TECHNICAL_DRAWING.png?v=1609794919" width="100%" height="100%">
+              {% elsif product.title  == 'Presidio Fire Pit' %}
+                <img class="lazyload" data-src="https://cdn.shopify.com/s/files/1/0467/0049/5015/files/PRESIDIO_TECHNICAL_DRAWING.png?v=1609794919" width="100%" height="100%">
+              {% elsif product.title  == '94 Gallon Smoker' %}
+                <img class="lazyload" data-src="https://cdn.shopify.com/s/files/1/0467/0049/5015/files/94_GALLON_SMOKER_TECHNICAL_DRAWING.png?v=1609794919" width="100%" height="100%">
+              {% elsif product.title  == 'Asado Fire Pit' %}
+                <img class="lazyload" data-src="https://cdn.shopify.com/s/files/1/0467/0049/5015/files/ASADO_TECHNICAL_DRAWING.png?v=1609794919" width="100%" height="100%">
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endunless %}
       {% if product.title == "Custom Offset Smokers" or product.title == "Open-Fire Grills"%}
         <a href="https://mill-scale.myshopify.com/pages/contact" class="homeFonts"><button style="width: 100%"  class=" united transitionbutton fill">Click to contact</button></a>
       {% else %}
