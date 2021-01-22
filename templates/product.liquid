@@ -82,19 +82,19 @@
                   
                 {% else %}
                   <option disabled="disabled">
-                    {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                    {{ variant.title }} - Sold Out
                   </option>
                 {% endif %}
               {% endfor %}
             </select>
           {% else %}
-          <select style="width:100%" name="id" id="ProductSelect-{{ section.id }}" class="product-single__variants hideVariant">
+            <select style="width:100%" name="id" id="ProductSelect-{{ section.id }}" class="product-single__variants hideVariant">
               {% for variant in product.variants %}
                 {% if variant.available %}
                   <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
                 {% else %}
                   <option disabled="disabled">
-                    {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                    {{ variant.title }} - Sold Out
                   </option>
                 {% endif %}
               {% endfor %}
@@ -104,12 +104,11 @@
           {% comment %} <label for="Quantity">quantity</label> {% endcomment %}
           {% comment %} <input type="number" id="Quantity" name="quantity" value="1" min="1"> {% endcomment %}
           <div class="customOptions" id="hulkapps_custom_options_{{ product.id }}"> </div>
+          <br>
           {% unless product.available %}
             <option disabled="disabled">SOLD OUT</option>
           {% else %}
-            
               {% comment %} <button class="heroDetails" style="width: 100%;"><a style="color: #B39457;"href="https://mill-scale.myshopify.com/pages/contact">Click to contact</a></button> {% endcomment %}
-              
               <button style="width: 100%" class="transitionbutton fill">Add to cart</button>
               {% comment %} id="AddToCart" {% endcomment %}
           {% endunless %}
