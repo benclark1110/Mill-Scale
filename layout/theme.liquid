@@ -119,7 +119,7 @@
                 </a>
               </div>
               <div>
-                {{ product.title }}
+                <a class="united" href="{{ product.url | within: collection }}">{{ product.title }}</a>
               </div>
               <div class="popularBorder">
                 <a class="united" style="color: #B39457;"href="{{ product.url | within: collection }}">
