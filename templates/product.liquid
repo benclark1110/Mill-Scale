@@ -48,7 +48,7 @@
             <p>{{ product.description | split: '~section2~' | last }}</p>
           </div>
         </div>
-        {% if collection.title == "Cookers" %}
+        {% if product.type == "Cookers" %}
           <hr class="hrColor">
           <div>
             <h3 class="accordion">+ Technical Diagrams</h3>
