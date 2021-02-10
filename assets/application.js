@@ -55,3 +55,14 @@ var sideText = [], b = -1;
 sideText[0] = "Handcrafted Fire Tools";
 sideText[1] = "Our Story";
 sideText[2] = "Custom Offset Smokers";
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("myTopnav").style.top = "0";
+  } else {
+    document.getElementById("myTopnav").style.top = "-150px";
+  }
+  prevScrollpos = currentScrollPos;
+}
