@@ -41,13 +41,15 @@
         </div>
       </div> {% endcomment %}
       {% unless product.title == "Custom Offset Smokers"%}
-        <hr class="hrColor">
-        <div>
-          <h3 class="accordion">+ Product Specs</h3>
-          <div class="panel">
-            <p>{{ product.description | split: '~section2~' | last }}</p>
+        {% if product.type == "Cookers"%}
+          <hr class="hrColor">
+          <div>
+            <h3 class="accordion">+ Product Specs</h3>
+            <div class="panel">
+              <p>{{ product.description | split: '~section2~' | last }}</p>
+            </div>
           </div>
-        </div>
+        {% endif %}
         {% if product.type == "Cookers" %}
           <hr class="hrColor">
           <div>
