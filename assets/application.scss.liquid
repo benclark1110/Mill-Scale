@@ -1021,3 +1021,40 @@ footer > div > div{
   -webkit-transition: 0.1s ease-in;
 }
 
+.transitionbuttonTwo {
+  position: relative;
+  overflow:hidden;
+  background: none;
+  cursor: pointer;
+  background-color: #B39457;
+  border-style: solid;
+  border-width: thin;
+  border-color: #1F1F1F;
+  color: #FFECD1;
+  padding: 2% 10% 2% 10%;
+  opacity: .99;
+  -webkit-transition: 0.2s ease-in;
+}
+
+.fillTwo:hover:before {
+  top: 0;
+}
+
+.fillTwo:hover {
+  color: #FFECD1 !important;
+  opacity: 1;
+  background-color: #B39457;
+}
+
+.fillTwo:before {
+  content: "";
+  position: absolute;
+  background:#1F1F1F;;
+  background-color: #1F1F1F;;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: -1;
+  -webkit-transition: 0.2s ease-in;
+}

@@ -73,7 +73,7 @@
         {% endif %}
       {% endunless %}
       {% if product.title == "Custom Offset Smokers" or product.title == "Open-Fire Grills"%}
-        <a href="https://mill-scale.myshopify.com/pages/contact" class="homeFonts"><button style="width: 100%"  class=" united transitionbutton fill">Click to contact</button></a>
+        <a href="https://mill-scale.myshopify.com/pages/contact" class="homeFonts"><button style="width: 100%"  class=" united transitionbuttonTwo fillTwo">Click to contact</button></a>
       {% else %}
         <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" style="overflow: auto; height: 70%; padding-top: 2%; padding-bototm: 3%;">
           {% if product.variants.size >= 2 %}
@@ -111,7 +111,7 @@
             <option disabled="disabled">SOLD OUT</option>
           {% else %}
               {% comment %} <button class="heroDetails" style="width: 100%;"><a style="color: #B39457;"href="https://mill-scale.myshopify.com/pages/contact">Click to contact</a></button> {% endcomment %}
-              <button style="width: 100%;" class="transitionbutton fill united">Add to cart</button>
+              <button style="width: 100%;" class="transitionbuttonTwo fillTwo united">Add to cart</button>
               {% comment %} id="AddToCart" {% endcomment %}
           {% endunless %}
         </form>
