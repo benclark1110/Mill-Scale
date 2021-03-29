@@ -1,4 +1,4 @@
-{% paginate blog.articles by 5 %}
+{% comment %} {% paginate blog.articles by 5 %}
 
 <h1>{{ blog.title }}</h1>
 {% for article in blog.articles %}
@@ -19,4 +19,26 @@
   {{ paginate | default_pagination }}
 {% endif %}
 
-{% endpaginate %}
+{% endpaginate %} {% endcomment %}
+
+<h1>{{ blog.title }}</h1>
+<div class='collection'>
+  {% for article in blog.articles %}
+    <div>
+      <div>
+        {% comment %} {{ product.price | money }} {% endcomment %}
+        {% comment %} {% unless product.available %}<br><strong>sold out</strong>{% endunless %} {% endcomment %}
+        <div>
+          <a href="{{ article.url | within: collection }}">
+            <img class="lazyload productImages" data-src="{{ article.image.src | img_url: 'original' }}" alt="{{ article.featured_image.alt | escape }}">
+          </a>
+        </div>
+      </div>
+      <div class="productBorder">
+        <a style="color: #B39457;" href="{{ article.url }}">{{ article.title }}</a>
+      </div>
+    </div>
+  {% else %}
+    <p>no matches</p>
+  {% endfor %}
+</div>

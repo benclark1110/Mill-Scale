@@ -1,15 +1,23 @@
-{% assign number_of_comments = article.comments_count %}
+{% comment %} {% assign number_of_comments = article.comments_count %}
 {% if comment and comment.created_at %}
   {% assign number_of_comments = article.comments_count %}
-{% endif %}
+{% endif %} {% endcomment %}
 
+<h3>Millscale Ambassador</h3>
 <h1>{{ article.title }}</h1>
+<h3>Location</h3>
 {% capture author %}<strong>{{ article.author }}</strong>{% endcapture %}
-{% capture date %}<time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>{% endcapture %}
-{{ article.author }} @ {{ article.created_at }}
-
+{% comment %} {% capture date %}<time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>{% endcapture %} {% endcomment %}
+{% comment %} {{ article.author }} @ {{ article.created_at }} {% endcomment %}
+{{ article.author }}
 <div>{{ article.content }}</div>
-{% if blog.comments_enabled? %}
+<div>
+    <img style="width: 360px; height: 360px;" class="lazyload productImages" data-src="{{ article.image.src | img_url: 'original' }}" alt="{{ article.featured_image.alt | escape }}">
+</div>
+<div>
+  <a href="https://millscale.co/blogs/ambassadors/">More Ambassadors</a>
+</div>
+{% comment %} {% if blog.comments_enabled? %}
   <h2>{{ number_of_comments }} comments</h2>
   {% paginate article.comments by 5 %}
     {% for comment in article.comments %}
@@ -38,4 +46,4 @@
       <input type="submit" value="post">
     {% endform %}
   </div>
-{% endif %}
+{% endif %} {% endcomment %}
