@@ -212,7 +212,19 @@ footer > div > div{
   grid-template-rows: auto;
 }
 
+.blogPosts {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: auto;
+}
+
 .collection > div > div{
+  display: block;
+  text-align: center;
+  padding-bottom: 2%;
+}
+
+.blogPosts > div > div{
   display: block;
   text-align: center;
   padding-bottom: 2%;
@@ -857,11 +869,15 @@ footer > div > div{
     display: none;
   }
 
-  .collection {
+  .collection, .blogPosts {
     flex-direction: column;
   }
 
   .collection > div {
+    margin-bottom: 17%;
+  }
+
+  .blogPosts > div {
     margin-bottom: 17%;
   }
 
@@ -904,6 +920,10 @@ footer > div > div{
     grid-template-columns: 33% 33% 33%;
   }
 
+  .blogPosts {
+    grid-template-columns: 50% 50%;
+  }
+
   .popular {
     grid-template-columns: 50% 50%;
   }
@@ -918,10 +938,14 @@ footer > div > div{
   .collection{
     grid-template-columns: 50% 50%;
   }
+
+  .blogPosts{
+    grid-template-columns: 100%;
+  }
 }
 
 @media screen and (max-width: 720px) {
-  .collection, .popular{
+  .collection, .popular, .blogPosts{
     grid-template-columns: 100%;
   }
 }

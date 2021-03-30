@@ -3,17 +3,21 @@
   {% assign number_of_comments = article.comments_count %}
 {% endif %} {% endcomment %}
 
-<h3>Millscale Ambassador</h3>
-<h1>{{ article.title }}</h1>
-<h3>Location</h3>
 {% capture author %}<strong>{{ article.author }}</strong>{% endcapture %}
 {% comment %} {% capture date %}<time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>{% endcapture %} {% endcomment %}
 {% comment %} {{ article.author }} @ {{ article.created_at }} {% endcomment %}
-{{ article.author }}
-<div>{{ article.content }}</div>
+{% comment %} {{ article.author }} {% endcomment %}
+
 <div>
-    <img style="width: 360px; height: 360px;" class="lazyload productImages" data-src="{{ article.image.src | img_url: 'original' }}" alt="{{ article.featured_image.alt | escape }}">
+    <img class="lazyload productImages" data-src="{{ article.image.src | img_url: 'original' }}" alt="{{ article.featured_image.alt | escape }}">
 </div>
+<div class="productBorder">
+  <h3>Millscale Ambassador</h3>
+  <a style="color: #B39457;" href="{{ article.url }}">{{ article.title | split: '~section2~' | first }}</a>
+  <br>
+  <a href="{{ article.url }}">{{ article.title | split: '~section2~' | last }}</a>
+</div>
+<div>{{ article.content }}</div>
 <div>
   <a href="https://millscale.co/blogs/ambassadors/">More Ambassadors</a>
 </div>
