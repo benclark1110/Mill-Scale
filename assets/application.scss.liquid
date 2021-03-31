@@ -200,6 +200,16 @@ footer > div > div{
   top: 4px;
 }
 
+.ambassadorBorder {
+  color: #B39457;
+  justify-content: center;
+  display: grid;
+  padding: 1%;
+  margin: 0 30% 0 30%;
+  border-style: solid;
+  border-width: thin;
+}
+
 .smokerIcon{
   padding: 5%
 }
@@ -237,6 +247,29 @@ footer > div > div{
   position:relative;
   bottom: 30px;
   padding: 2%;
+}
+
+.blogPostBorder {
+  background-color: #1F1F1F;
+  border-top-style: solid;
+  margin: 0 15% 0 15%;
+  position:relative;
+  bottom: 70px;
+  padding: 2%;
+}
+
+.blogBorder {
+  background-color: #1F1F1F;
+  border-top-style: solid;
+  margin: 0 15% 0 15%;
+  position:relative;
+  bottom: 115px;
+  padding: 2%;
+}
+
+.blogContent {
+  margin: 0 15% 0 15%;
+  position:relative;
 }
 
 .row {
@@ -947,6 +980,10 @@ footer > div > div{
 @media screen and (max-width: 720px) {
   .collection, .popular, .blogPosts{
     grid-template-columns: 100%;
+  }
+
+  .blogBorder {
+    margin: 0;
   }
 }
 
