@@ -8,15 +8,15 @@
 {% comment %} {{ article.author }} @ {{ article.created_at }} {% endcomment %}
 {% comment %} {{ article.author }} {% endcomment %}
 
-<div style="display: grid; justify-content: center;">
+<div style="display: grid; justify-content: flex-start;; margin-left:15%" class="articlePhotoDiv">
     <img class="lazyload blogPhoto" data-src="{{ article.image.src | img_url: 'original' }}" alt="{{ article.featured_image.alt | escape }}">
 </div>
 <div class="blogBorder">
-  <h2>Millscale Ambassador</h2>
-  <h3 class="outline" style="color: #B39457; display:inline;">{{ article.title | split: '~section2~' | first }}</h3>
-  <h3 style="float: right; color: #B39457; margin: 0;">{{ article.title | split: '~section2~' | last }}</h3>
+  <h3>Millscale Ambassador</h3>
+  <h1 class="outline" style="color: #B39457;">{{ article.title | split: '~section2~' | first }}</h1>
+  <h2 style="color: #B39457; margin: 0;">{{ article.title | split: '~section2~' | last }}</h2>
 </div>
-<div class="blogContent" style="font-size: 1.5em; line-height: 2;">
+<div class="blogContent">
   {{ article.content }}
   <div class="ambassadorBorder">
     <a class="united" style="color: #B39457;" href="https://millscale.co/blogs/ambassadors/">More Ambassadors</a>

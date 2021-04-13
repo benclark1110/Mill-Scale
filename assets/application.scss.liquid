@@ -261,15 +261,17 @@ footer > div > div{
 .blogBorder {
   background-color: #1F1F1F;
   border-top-style: solid;
-  margin: 0 15% 0 15%;
+  margin: 0 15% 0 43%;
   position:relative;
-  bottom: 115px;
+  bottom: 375px;
   padding: 2%;
 }
 
 .blogContent {
-  margin: -3% 15% 0 15%;
+  margin: -10% 15% 0 15%;
   position:relative;
+  font-size: 1.5em; 
+  line-height: 2;
 }
 
 .row {
@@ -656,6 +658,38 @@ footer > div > div{
   }
 }
 
+@media (max-width: 1710px) {
+  .blogBorder {
+    margin: 0 10% 0 43%;
+  }
+  .articlePhotoDiv {
+    margin-left: 10% !important;
+  }
+}
+
+@media (max-width: 1445px) {
+  .blogBorder {
+    margin: 0 5% 0 54%;
+  }
+  .articlePhotoDiv {
+    margin-left: 5% !important;
+  }
+
+  .articlePhotoDiv {
+    justify-content: center !important;
+  }
+
+  .blogBorder {
+    margin: 0;
+    padding: 4%;
+    bottom: 5%;
+  }
+
+  .blogContent {
+    margin: -3% 5% -3% 5% !important;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .active {
     padding-top: 6% !important;
@@ -786,6 +820,15 @@ footer > div > div{
     display: none;
   }
 
+  .collectionsHeader {
+    margin: 0 .2% 2% .2%;
+    padding-bottom: .4%;
+  }
+
+  .collectionsHeader > a {
+    padding: .2%;
+  }
+
   .insta {
     height: 100%;
   }
@@ -856,7 +899,7 @@ footer > div > div{
   }
 
   .collectionTitles {   
-    margin-right: -1.2%;
+    margin-right: -1.5%;
   }
 
   .smokerIcon {
@@ -990,11 +1033,7 @@ footer > div > div{
   .blogBorder {
     margin: 0;
     padding: 4%;
-  }
-
-  .blogContent {
-    margin: -3% 2% 0 2%;
-    position:relative;
+    bottom: 5%;
   }
 
   .blogPhoto {
@@ -1012,6 +1051,17 @@ footer > div > div{
   .blogPhotoPage {
     width: 100% !important;
     height: auto !important;
+  }
+
+  .articlePhotoDiv {
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  .blogContent {
+    margin: -3% 5% -3% 5% !important;
+    font-size: 3.5vw;
+    line-height: 150% !important;
   }
 }
 
