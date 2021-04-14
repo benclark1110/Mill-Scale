@@ -25,8 +25,6 @@
         <h3 class="productPricing united">PRICE</h3>
         {% if product.title == "Custom Offset Smokers" %}
         <h3 id="ProductPrice" class="productPricing">Contact us</h3>
-        {% elsif product.title == "Open-Fire Grills" %}
-        <h3 id="ProductPrice" class="productPricing">Starting at $4,400</h3>
         {% else %}
         <h3 id="ProductPrice" class="productPricing"> {{ current_variant.price | money }}</h3>
         {% endif %}
@@ -74,7 +72,7 @@
           </div>
         {% endif %}
       {% endunless %}
-      {% if product.title == "Custom Offset Smokers" or product.title == "Open-Fire Grills"%}
+      {% if product.title == "Custom Offset Smokers" %}
         <a href="https://mill-scale.myshopify.com/pages/contact" class="homeFonts"><button style="width: 100%"  class=" united transitionbuttonTwo fillTwo">Click to contact</button></a>
       {% else %}
         <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" style="overflow: auto; height: 70%; padding-top: 2%; padding-bototm: 3%;">
