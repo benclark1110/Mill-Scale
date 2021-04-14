@@ -195,9 +195,10 @@ footer > div > div{
   border-width: thin;
 }
 
-.popularBorder a{
+.popularBorder a {
   position:relative;
   top: 4px;
+  color: #B39457;
 }
 
 .ambassadorBorder {
@@ -727,6 +728,10 @@ footer > div > div{
     height: 10%;
   }
 
+  iframe {
+    width: 100% !important;
+  }
+
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
@@ -1025,6 +1030,16 @@ footer > div > div{
   }
 }
 
+@media (max-width: 1000px) {
+  .topnav > a {
+    font-size: 13px;
+  }
+
+  .active > img {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 720px) {
   .collection, .popular, .blogPosts{
     grid-template-columns: 100%;
@@ -1176,25 +1191,32 @@ footer > div > div{
 }
 
 .fillTwo:hover {opacity: 0.6}
-{% comment %} .fillTwo:hover:before {
+
+.transitionbuttonThree {
+  position: relative;
+  overflow:hidden;
+  background: none;
+  cursor: pointer;
+  background-color: #0B0B0B;
+  border-style: solid;
+  border-width: thin;
+  border-color: #B39457;
+  color: #B39457 !important;
+  opacity: .99;
+  -webkit-transition: 0.1s ease-in;
+}
+
+.fillThree:hover:before {
   top: 0;
 }
 
-.fillTwo:hover {
+.fillThree:hover {
   color: #FFECD1 !important;
   opacity: 1;
-  background-color: #B39457;
+  background-color: #B39457 !important;
 }
 
-.fillTwo:before {
-  content: "";
-  position: absolute;
-  background:#1F1F1F;;
-  background-color: #1F1F1F;;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 100%;
-  z-index: -1;
-  -webkit-transition: 0.2s ease-in;
-} {% endcomment %}
+.popularBorder:hover > a {
+  -webkit-transition: 0.1s ease-in;
+  color: #FFECD1;
+}
