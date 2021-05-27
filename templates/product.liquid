@@ -104,6 +104,16 @@
           {% endif %}
           {% comment %} {{ current_variant.price | money }} {% endcomment %}
           {% comment %} <label for="Quantity">quantity</label> {% endcomment %}
+          <label for="quantity">Qty: </label>
+          <input min="1" type="number" id="quantity" name="quantity" value="1" />
+          <style>
+              #quantity {
+              padding: 5px;
+              width: 35px;
+              border: 1px solid #B39457;
+              background: #1F1F1F;
+              }
+          </style>
           {% comment %} <input type="number" id="Quantity" name="quantity" value="1" min="1"> {% endcomment %}
           <div class="customOptions" id="hulkapps_custom_options_{{ product.id }}"> </div>
           <br>
