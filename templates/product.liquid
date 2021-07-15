@@ -23,7 +23,7 @@
         <h1 class="outline productPage united">{{ product.title }}</h1>
       <div>
         <h3 class="productPricing united">PRICE</h3>
-        {% if product.title == "Custom Offset Smokers" %}
+        {% if product.title == "Custom Offset Smokers" or product.title == "El Jefe" or product.title == "Special Edition Offset Smokers" %}
         <h3 id="ProductPrice" class="productPricing">Contact us</h3>
         {% else %}
         <h3 id="ProductPrice" class="productPricing"> {{ current_variant.price | money }}</h3>
@@ -72,7 +72,7 @@
           </div>
         {% endif %}
       {% endunless %}
-      {% if product.title == "Custom Offset Smokers" %}
+      {% if product.title == "Custom Offset Smokers" or product.title == "El Jefe" or product.title == "Special Edition Offset Smokers" %}
         <a href="https://mill-scale.myshopify.com/pages/contact" class="homeFonts"><button style="width: 100%"  class=" united transitionbuttonTwo fillTwo">Click to contact</button></a>
       {% else %}
         <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" style="overflow: auto; height: 70%; padding-top: 2%; padding-bototm: 3%;">
