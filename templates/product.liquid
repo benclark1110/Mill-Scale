@@ -23,7 +23,7 @@
         <h1 class="outline productPage united">{{ product.title }}</h1>
       <div>
         <h3 class="productPricing united">PRICE</h3>
-        {% if product.tags contains 'contact' %}
+        {% if product.tags contains 'hidePrice' %}
         <h3 id="ProductPrice" class="productPricing">Contact us</h3>
         {% else %}
         <h3 id="ProductPrice" class="productPricing"> {{ current_variant.price | money }}</h3>
