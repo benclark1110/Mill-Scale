@@ -1,7 +1,7 @@
 {% comment %} <h1 style="color: #B39457;"class="collectionHeadings">{{ collection.description }}</h1> {% endcomment %}
 <div class="collectionsHeader">
   {% for collection in collections %}
-    {% unless collection.title == 'Popular Items' %}
+    {% unless collection.title == 'Popular Items' or collection.title == 'Secret'%}
       {% unless collection.title == 'Accessories' %}
         {% if collection.title == page_title %}
         <a class="united collectionTitles selected" href="{{ collection.url }}">{{ collection.title | escape }}</a>

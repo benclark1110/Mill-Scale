@@ -29,13 +29,11 @@
         </button>
         <div class="dropdown-content">
         {% for collection in collections %}
-          {% unless collection.title == 'Popular Items' %}
-            {% unless collection.title == 'Accessories' %}
-              <div class="dropdownImage">
-                <a style="height: 10%" href="{{ collection.url }}"><h2 class="centered united">{{ collection.title | escape }}</h2></a>
-                <a class="hide" href="{{ collection.url }}"><img class="lazyload headerImage" data-src="{{ collection.image.src | img_url: 'original' }}" alt="{{ collection.image.alt | escape }}"></a>
-              </div>
-            {% endunless %}
+          {% unless collection.title == 'Popular Items' or collection.title == 'Accessories' or collection.title == 'Secret'%}
+            <div class="dropdownImage">
+              <a style="height: 10%" href="{{ collection.url }}"><h2 class="centered united">{{ collection.title | escape }}</h2></a>
+              <a class="hide" href="{{ collection.url }}"><img class="lazyload headerImage" data-src="{{ collection.image.src | img_url: 'original' }}" alt="{{ collection.image.alt | escape }}"></a>
+            </div>
           {% endunless %}
         {% endfor %}
         </div>
